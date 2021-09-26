@@ -36,5 +36,8 @@
     ".editorconfig": [
       "eclint fix"
     ]
+  },
+  "dependencies": {
+    "normalize.css": "^8.0.1"
   }
 }
