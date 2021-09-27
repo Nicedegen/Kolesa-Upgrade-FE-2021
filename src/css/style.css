@@ -537,8 +537,6 @@ p {
 
 .form-size {
     display: flex;
-    justify-content: space-around;
-    width: 140px;
 }
 
 .radio-size {
@@ -550,6 +548,7 @@ p {
     cursor: pointer;
     text-align: center;
     line-height: 40px;
+    margin-right: 8px;
 }
 
 .input-size {
