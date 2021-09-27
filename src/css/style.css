@@ -1,4 +1,4 @@
-/* <------------------     BEM Modify START   (я бы лучше использовал переменные)   --------> */
+/* <------------------     BEM Modify START   --------> */
 
 /* <------------------------------     BEM Modify END      ----------------------------------> */
 
@@ -6,6 +6,16 @@
 body {
     max-width: 1440px;
     margin: 0 auto;
+    font-family: 'Open Sans', sans-serif;
+}
+
+h2,
+h3,
+h4,
+ul,
+p {
+    margin: 0;
+    padding: 0;
 }
 
 /* <------------------------------     BODY END      ----------------------------------> */
@@ -18,7 +28,7 @@ body {
 .header__items {
     list-style-type: none;
     display: flex;
-    padding-right: 32px;
+    padding: 0 32px 0 24px;
     align-items: center;
 }
 
@@ -74,10 +84,12 @@ body {
 
 .promo {
     display: flex;
+    margin-top: 24px;
 }
 
 .main__menu {
-    width: 320px;
+    width: 150px;
+    margin: 0 132px 0 24px;
 }
 
 .main__menu-items {
@@ -105,7 +117,7 @@ body {
     list-style-type: none;
     display: flex;
     justify-content: space-around;
-    padding-top: 26px;
+    margin-top: 26px;
 }
 
 .balls-receive,
@@ -137,7 +149,7 @@ body {
     font-weight: 600;
     line-height: 32px;
     font-size: 22px;
-    padding-left: 16px;
+    margin-left: 16px;
 }
 
 .receive-icon__plus {
@@ -177,7 +189,7 @@ body {
 .choise {
     display: flex;
     list-style-type: none;
-    padding-top: 40px;
+    padding: 40px 0 0 0;
 }
 
 .choise li {
@@ -187,16 +199,13 @@ body {
     border: 1px solid gray;
     border-radius: 5px;
     box-shadow: -1px 5px rgba(0, 0, 0, 0.048);
-}
-
-.choise li + li {
-    margin-left: 8px;
+    margin-right: 8px;
 }
 
 .main__content-items {
     display: grid;
     grid-template-columns: 1fr 1fr 1fr;
-    padding-top: 16px;
+    margin-top: 16px;
     margin-left: 300px;
 }
 
@@ -230,7 +239,7 @@ body {
 .footer__content-contacts ul {
     list-style-type: none;
     display: flex;
-    padding-left: 35px;
+    margin-left: 35px;
 }
 
 .icons-instagram,
@@ -249,7 +258,7 @@ body {
     font-weight: 400;
     line-height: 24px;
     font-size: 14px;
-    padding-top: 15px;
+    margin-top: 15px;
 }
 
 .ideas-btn {
@@ -274,26 +283,30 @@ body {
     width: 100vw;
     height: 100vh;
     overflow: auto;
-    background-color: rgb(0, 0, 0);
     background-color: rgb(0, 0, 0, 0.4);
 }
 
 .modal-content {
+    position: relative;
     background-color: #fefefe;
     margin: 15vh auto;
-    padding: 20px;
     border: 1px solid #888;
+    border-radius: 16px;
     max-width: 1040px;
-    min-height: 450px;
 }
 
 .close {
+    border: none;
+    position: absolute;
+    box-sizing: border-box;
+    width: 32px;
+    height: 32px;
     background-image: url(/src/assets/icons/cross.svg);
+    background-color: #fff;
     background-repeat: no-repeat;
-    background-size: cover;
-    float: right;
-    width: 19px;
-    height: 19px;
+    padding: 0;
+    top: 24px;
+    right: 24px;
 }
 
 .close:hover,
@@ -303,15 +316,12 @@ body {
 
 .modal__main {
     display: flex;
-    width: 330px;
-    height: 400px;
 }
 
 .modal__main-card {
     width: 330px;
     height: 300px;
-    padding-left: 56px;
-    padding-right: 24px;
+    padding: 56px 24px 0 56px;
 }
 
 .card-big {
@@ -320,63 +330,53 @@ body {
 
 .card-little ul {
     display: flex;
+    justify-content: center;
     list-style-type: none;
-    padding: 0;
-    width: 175px;
     height: 50px;
-    margin: 0 auto;
+}
+
+.little-1,
+.little-2,
+.little-3 {
+    display: block;
+    width: 50px;
+    margin-right: 8px;
 }
 
 .little-1 {
-    box-sizing: border-box;
     background-image: url(/src/assets/icons/image-girl.png);
-    background-size: cover;
-    width: 50px;
-    height: 50px;
-    margin-right: 8px;
 }
 
 .little-2 {
     background-image: url(/src/assets/icons/t-shirt-sml.png);
-    box-sizing: border-box;
-    background-size: cover;
-    width: 50px;
-    height: 50px;
-    padding-right: 5px;
-    margin-right: 8px;
+    margin-right: 5px;
 }
 
 .little-3 {
-    box-sizing: border-box;
     background-image: url(/src/assets/icons/image-man.png);
-    width: 50px;
-    height: 50px;
 }
 
 .active {
     border: 1px solid #2a81dd;
     border-radius: 8px;
-    box-shadow: 0 4px rgba(0, 0, 0, 0.25);
 }
 
 .modal__main-info {
-    padding-top: 34px;
-}
-
-.info-header {
-    display: flex;
+    padding-top: 64px;
+    max-width: 573px;
 }
 
 .info-title {
-    width: 400px;
+    display: flex;
+    justify-content: space-between;
 }
 
 .info-title-text {
-    margin: 0;
     color: #1c1819;
     font-weight: 400;
     line-height: 32px;
     font-size: 20px;
+    margin-bottom: 8px;
 }
 
 .info-title-balls {
@@ -384,12 +384,11 @@ body {
     font-weight: 600;
     line-height: 32px;
     font-size: 20px;
-    padding-bottom: 4px;
+    margin-bottom: 8px;
 }
 
 .info-title-btn {
-    width: 185px;
-    height: 36px;
+    padding: 6px 15px;
     background-color: #ffdd61;
     color: #1c1819;
     font-weight: 400;
@@ -398,43 +397,49 @@ body {
     cursor: pointer;
     border: none;
     border-radius: 8px;
+    margin-bottom: 24px;
 }
 
 .info-balans {
-    display: flex;
-    justify-content: space-around;
+    position: relative;
     width: 196px;
     height: 68px;
     background-color: #f0fafd;
     border-radius: 16px;
-    margin-top: 35px;
+    margin-top: 16px;
+}
+
+.info-balans__text {
+    margin-left: 16px;
 }
 
 .text-title {
     color: #888b94;
     font-weight: 400;
-    line-height: 14px;
+    line-height: 24px;
     font-size: 14px;
+    margin-top: 8px;
 }
 
 .text-subtitle {
     color: #1c1819;
     font-weight: 400;
-    line-height: 14px;
+    line-height: 24px;
     font-size: 16px;
+    margin-top: 4px;
 }
 
-.info-balans__img {
+.info-balans__text::after {
+    content: '';
+    display: block;
+    position: absolute;
     background-image: url(/src/assets/icons/package.png);
     width: 40px;
     height: 40px;
     background-size: cover;
     background-repeat: no-repeat;
-    margin-top: 17px;
-}
-
-.info-colors {
-    padding-top: 20px;
+    top: 15px;
+    left: 140px;
 }
 
 .colors-text {
@@ -443,11 +448,12 @@ body {
     font-weight: 400;
     line-height: 14px;
     font-size: 14px;
-    padding-bottom: 8px;
+    margin-bottom: 8px;
 }
 
 .choise-color {
     display: flex;
+    margin-bottom: 24px;
 }
 
 .radio {
@@ -475,7 +481,7 @@ body {
     border-radius: 8px;
     min-width: 80px;
     height: 40px;
-    padding: 5px 5px 5px 25px;
+    padding: 5px 5px 5px 35px;
     color: #2a81dd;
     font-weight: 400;
     line-height: 32px;
@@ -521,7 +527,7 @@ body {
 }
 
 .info-size {
-    padding-top: 15px;
+    margin-bottom: 24px;
 }
 
 .size-text {
@@ -535,7 +541,6 @@ body {
 .form-size {
     display: flex;
     justify-content: space-around;
-    padding-top: 4px;
     width: 140px;
 }
 
@@ -576,27 +581,23 @@ body {
 }
 
 .info-descr {
-    padding-top: 24px;
+    margin-bottom: 44px;
 }
 
-.info-descr h3,
-.info-descr h4 {
-    margin: 0;
-}
-
-.descr-title {
+.descr-details {
     font-weight: 600;
     line-height: 24px;
-    font-size: 16px;
+    font-size: 14px;
     color: #1c1819;
+    margin-bottom: 4px;
 }
 
-.descr-subtitle {
+.descr-interpretation {
     font-weight: 400;
     line-height: 24px;
-    font-size: 16px;
+    font-size: 14px;
     color: #1c1819;
-    overflow: hidden;
+    margin-bottom: 24px;
 }
 
 /* <------------------------------     MODAL END      ----------------------------------> */
