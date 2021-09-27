@@ -149,15 +149,20 @@ p {
     font-weight: 600;
     line-height: 32px;
     font-size: 22px;
-    margin-left: 16px;
 }
 
 .receive-icon__plus {
     background-image: url(/src/assets/icons/plus.png);
+}
+
+.receive-icon__plus,
+.receive-icon__question,
+.receive-icon__gift {
     background-position: center;
     background-repeat: no-repeat;
     width: 48px;
     height: 56px;
+    margin-right: 16px;
 }
 
 .balls-how {
@@ -167,10 +172,6 @@ p {
 
 .receive-icon__question {
     background-image: url(/src/assets/icons/question.png);
-    background-position: center;
-    background-repeat: no-repeat;
-    width: 48px;
-    height: 56px;
 }
 
 .balls-gift {
@@ -180,10 +181,6 @@ p {
 
 .receive-icon__gift {
     background-image: url(/src/assets/icons/gift.png);
-    background-position: center;
-    background-repeat: no-repeat;
-    width: 48px;
-    height: 56px;
 }
 
 .choise {
@@ -333,6 +330,7 @@ p {
     justify-content: center;
     list-style-type: none;
     height: 50px;
+    flex-wrap: wrap;
 }
 
 .little-1,
@@ -359,6 +357,7 @@ p {
 .active {
     border: 1px solid #2a81dd;
     border-radius: 8px;
+    outline: 0.5px solid #1c1819;
 }
 
 .modal__main-info {
@@ -410,7 +409,7 @@ p {
 }
 
 .info-balans__text {
-    margin-left: 16px;
+    padding-left: 16px;
 }
 
 .text-title {
@@ -462,7 +461,7 @@ p {
     border-radius: 8px;
     min-width: 80px;
     height: 40px;
-    margin-left: 8px;
+    margin-right: 8px;
 }
 
 .radio-input {
