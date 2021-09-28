@@ -145,7 +145,8 @@ p {
 
 .menu-item a:active,
 .menu-item a:hover,
-.menu-item span {
+.menu-item span,
+.item-active a {
     font-weight: 600;
 }
 
