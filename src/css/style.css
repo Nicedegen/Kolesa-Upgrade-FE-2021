@@ -3,6 +3,7 @@
 :root {
     --main-text-color: #1c1819;
     --not-active-text-color: #2a81dd;
+    --active-text-color: #f33;
 }
 
 /* <------------------------------     Variables end      ----------------------------------> */
@@ -90,6 +91,7 @@ p {
 }
 
 .profile-icon img {
+    display: block;
     border-radius: 50%;
     margin-right: 16px;
 }
@@ -99,6 +101,18 @@ p {
     font-weight: 600;
     line-height: 24px;
     font-size: 14px;
+}
+
+.profile-icon:hover img {
+    outline: 1px solid var(--not-active-text-color);
+}
+
+.text-name:hover {
+    color: var(--active-text-color);
+}
+
+.text-balls:hover {
+    color: #00d200;
 }
 
 .text-balls {
@@ -306,7 +320,7 @@ p {
 }
 
 .item:hover .item__description-price {
-    color: #f33;
+    color: var(--active-text-color);
 }
 
 .item__descroption-title {
