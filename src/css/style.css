@@ -4,6 +4,8 @@
     --main-text-color: #1c1819;
     --not-active-text-color: #2a81dd;
     --active-text-color: #f33;
+    --border-color: rgba(28, 24, 25, 0.1);
+    --white-color: #fff;
 }
 
 /* <------------------------------     Variables end      ----------------------------------> */
@@ -13,7 +15,6 @@ body {
     max-width: 1440px;
     margin: 0 auto;
     font-family: 'Open Sans', sans-serif;
-    background: #e5e5e5;
 }
 
 h2,
@@ -25,40 +26,51 @@ p {
     padding: 0;
 }
 
+/* УДАЛИТЬ ПО ЗАВЕРШЕНИЮ ВЕРСТКИ */
+
 .body-inner {
-    background: #fff;
+    box-shadow: 0 2px 10px rgba(28, 24, 25, 0.1);
 }
 
+/* УДАЛИТЬ ПО ЗАВЕРШЕНИЮ ВЕРСТКИ */
+
 .body-inner__page {
-    min-height: 100vh;
+    min-height: calc(100vh - 98px);
 }
 
 /* <------------------------------     BODY END      ----------------------------------> */
 
 /* <------------------------------     HEADER START      ----------------------------------> */
 
+/*  Поменять на margin после удаления тени у body-inner */
+
+.header {
+    padding-top: 32px;
+}
+
 .header__items {
-    padding-top: 34px;
     margin: 0 0 0 32px;
     list-style-type: none;
     display: flex;
     align-items: center;
 }
 
-.header__items__emblem {
+.items__emblem {
     background-image: url(/src/assets/icons/Kolesa.svg);
-    width: 215px;
-    height: 35px;
-    margin: 4px 68px 0 0;
+    background-size: cover;
+    width: 222px;
+    height: 36px;
+    margin: 4px 60px 0 0;
 }
 
-.header__items__scan {
+.items__scan {
     box-sizing: border-box;
     margin-right: 600px;
     position: relative;
+    opacity: 70%;
 }
 
-.header__items__scan input {
+.items__scan input {
     box-sizing: border-box;
     width: 308px;
     height: 44px;
@@ -68,7 +80,7 @@ p {
     padding-left: 56px;
 }
 
-.header__items__scan button {
+.scan-btn {
     position: absolute;
     top: 12px;
     left: 16px;
@@ -79,22 +91,25 @@ p {
     cursor: pointer;
 }
 
-.header__items__scan button::before {
+.items__scan button::before {
     content: url(/src/assets/icons/loupe.svg);
 }
 
-.header__items__scan input:hover,
-.header__items__scan input:focus {
-    padding-left: 70px;
-    transition: 0.5s linear;
+.items__scan:hover,
+.items__scan:focus {
+    opacity: 100%;
 }
 
-.header__items__profile a {
+.items__profile button {
     display: flex;
     text-decoration: none;
+    border: none;
+    padding: 0;
+    background: #fff;
+    text-align: start;
 }
 
-.profile-icon img {
+.profile-icon {
     display: block;
     border-radius: 50%;
     margin-right: 16px;
@@ -107,7 +122,7 @@ p {
     font-size: 14px;
 }
 
-.profile-icon:hover img {
+.profile-icon:hover {
     outline: 1px solid var(--not-active-text-color);
 }
 
@@ -116,7 +131,7 @@ p {
 }
 
 .text-balls:hover {
-    color: #00d200;
+    color: var(--active-text-color);
 }
 
 .text-balls {
@@ -124,6 +139,7 @@ p {
     font-weight: 400;
     line-height: 20px;
     font-size: 13px;
+    justify-self: flex-start;
 }
 
 .content-inner {
@@ -196,8 +212,8 @@ p {
 .balls__receive:hover,
 .balls__plus:hover,
 .balls__gift:hover {
-    outline: 1px solid #000080;
-    transition: 0.5s linear;
+    border: 1px solid #000080;
+    transition: border 0.5s linear;
 }
 
 .balls__receive {
@@ -256,7 +272,7 @@ p {
     min-width: 100px;
     cursor: pointer;
     margin-right: 6px;
-    filter: drop-shadow(0 4px 4px rgba(0, 0, 0, 0.25));
+    box-shadow: 0 4px 4px rgba(0, 0, 0, 0.25);
 }
 
 .main__content-choise .choise-active {
@@ -267,8 +283,6 @@ p {
 
 .main__content-choise button:hover {
     border: 1px solid rgba(0, 0, 0, 1);
-    min-width: 150px;
-    transition: 0.3s linear;
 }
 
 .main__content-items {
@@ -284,14 +298,15 @@ p {
     box-shadow: 0 2px 10px rgba(28, 24, 25, 0.1);
     width: 330px;
     height: 474px;
-    position: relative;
+    z-index: 1;
 }
 
 .item:hover {
     box-shadow: 0 2px 10px rgba(28, 24, 25, 0.3);
-    height: 520px;
     position: absolute;
     z-index: 2;
+    background-color: #fff;
+    padding-bottom: 44px;
 }
 
 .item__card {
@@ -349,20 +364,20 @@ p {
 }
 
 .item__descroption-hidden {
-    position: absolute;
-    top: 460px;
-    left: 15px;
+    text-align: center;
     visibility: hidden;
+    margin-bottom: 16px;
 }
 
 .item__descroption-btn {
     width: 300px;
     height: 44px;
-    border: 0;
+    border: none;
     background: var(--not-active-text-color);
     color: white;
     border-radius: 8px;
     cursor: pointer;
+    padding: 0;
 }
 
 .item:hover .item__descroption-hidden {
@@ -378,6 +393,7 @@ p {
     color: white;
     display: flex;
     justify-content: space-between;
+    max-height: 98px;
 }
 
 .contacts-copyright {
@@ -387,7 +403,7 @@ p {
 .footer__content-contacts ul {
     list-style-type: none;
     display: flex;
-    margin: 8px 0 22px 35px;
+    margin: 8px 0 24px 36px;
 }
 
 .contacts-icons__instagram,
@@ -395,7 +411,7 @@ p {
 .contacts-icons__vk {
     background-size: cover;
     background-repeat: no-repeat;
-    margin-right: 11px;
+    margin-right: 12px;
 }
 
 .footer__content-ideas {
@@ -407,21 +423,21 @@ p {
     line-height: 24px;
     font-size: 14px;
     align-self: center;
-    margin-right: 50px;
+    margin-right: 48px;
 }
 
 .ideas__btn {
-    margin: 0 39px;
+    margin: 0 40px;
     width: 150px;
     height: 38px;
     border-radius: 8px;
     align-self: center;
     cursor: pointer;
-    transition: height 1s 1s cubic-bezier(0, 0, 1, 1) 500ms;
 }
 
 .ideas__btn:hover {
     height: 50px;
+    transition: height 0.5s linear;
 }
 
 /* <------------------------------     FOOTER END      ----------------------------------> */
@@ -504,7 +520,7 @@ p {
 
 .little-2 {
     background-image: url(/src/assets/icons/t-shirt-sml.png);
-    margin-right: 5px;
+    margin-right: 4px;
 }
 
 .little-3 {
@@ -515,7 +531,7 @@ p {
     border: 1px solid #2a81dd;
     border-radius: 8px;
     outline: 0.5px solid #1c1819;
-    filter: drop-shadow(0 4px 4px rgba(0, 0, 0, 0.25));
+    box-shadow: 0 4px 4px rgba(0, 0, 0, 0.25);
 }
 
 .modal__main-info {

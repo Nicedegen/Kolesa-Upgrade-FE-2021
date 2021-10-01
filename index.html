@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en,ru">
+<html lang="en">
 
 <head>
   <meta charset="UTF-8" />
@@ -9,6 +9,7 @@
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;600&display=swap" rel="stylesheet">
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="keywords" content="Мерч, продажа одежды, аксессуары, продажа футболок, свитшот, kolesa group">
   <title>Kolesa shop</title>
 </head>
 
@@ -18,22 +19,23 @@
       <!-------------- SECTION HEADER START  -------------->
       <header class="header">
         <ul class="header__items">
-          <li class="header__items__emblem"></li>
-          <li class="header__items__scan">
+          <li class="items__emblem"></li>
+          <li class="items__scan">
             <form>
               <button type="submit" class="scan-btn"></button>
               <input type="search" placeholder="Поиск">
             </form>
           </li>
-          <li class="header__items__profile">
-            <a href="#">
-              <div class="profile-icon"><img src="/src/assets/icons/profile-icon.png" alt="Иконка профиля">
-              </div>
-              <div class="profile-text">
-                <div class="text-name" id="name">Мортиджан</div>
-                <div class="text-balls" id="balls">300 Балов</div>
-              </div>
-            </a>
+          <li class="items__profile">
+            <button type="button">
+              <img src="/src/assets/icons/profile-icon.png" alt="Иконка профиля" class="profile-icon" width="44"
+                height="44">
+              <span class="profile-text">
+                <span class="text-name">Мортиджан</span>
+                <br>
+                <span class="text-balls">300 Балов</span>
+              </span>
+            </button>
           </li>
         </ul>
       </header>
@@ -65,23 +67,23 @@
                   <img src="/src/assets/img/banner.png" alt="Главный банер акций" width="100%" height="340">
                 </div>
                 <div class="main__content-balls">
-                  <button type="submit" class="balls__receive">
-                    <div class="receive__icon-plus"></div>
-                    <div class="receive__text">Получить балы</div>
+                  <button type="button" class="balls__receive">
+                    <span class="receive__icon-plus"></span>
+                    <span class="receive__text">Получить балы</span>
                   </button>
-                  <button type="submit" class="balls__plus">
-                    <div class="receive__icon-question"></div>
-                    <div class="receive__text">Как получить балы</div>
+                  <button type="button" class="balls__plus">
+                    <span class="receive__icon-question"></span>
+                    <span class="receive__text">Как получить балы</span>
                   </button>
-                  <button type="submit" class="balls__gift">
-                    <div class="receive__icon-gift"></div>
-                    <div class="receive__text">Подарить балы</div>
+                  <button type="button" class="balls__gift">
+                    <span class="receive__icon-gift"></span>
+                    <span class="receive__text">Подарить балы</span>
                   </button>
                 </div>
                 <div class="main__content-choise">
-                  <button type="submit" class="choise__all choise-active">Все товары</button>
-                  <button type="submit" class="choise__clothes">Одежда</button>
-                  <button type="submit" class="choise__accessories">Аксессуары</button>
+                  <button type="button" class="choise__all choise-active">Все товары</button>
+                  <button type="button" class="choise__clothes">Одежда</button>
+                  <button type="button" class="choise__accessories">Аксессуары</button>
                 </div>
               </div>
             </div>
@@ -94,15 +96,15 @@
                     <span class="item__badge">new</span>
                   </div>
                   <div class="item__description">
-                    <div class="item__description-price">
+                    <span class="item__description-price">
                       220 баллов
-                    </div>
+                    </span>
                     <h3 class="item__descroption-title">
                       Футболка "Эволюционируй или сдохни"
                     </h3>
-                    <div class="item__descroption-hint">
+                    <span class="item__descroption-hint">
                       Размеры S/M/L
-                    </div>
+                    </span>
                   </div>
                   <div class="item__descroption-hidden">
                     <button class="item__descroption-btn" type="button">
@@ -112,7 +114,7 @@
                 </section>
               </div>
               <div>
-                <section class="item" id="one">
+                <section class="item">
                   <div class="item__card">
                     <img src="/src/assets/img/shirt-main.png" alt="Картинка футболки" class="item__card-img" width="330"
                       height="330">
@@ -128,16 +130,16 @@
                     <div class="item__descroption-hint">
                       Размеры S/M/L
                     </div>
-                  </div>
-                  <div class="item__descroption-hidden">
-                    <button class="item__descroption-btn" type="button">
-                      Заказать
-                    </button>
+                    <div class="item__descroption-hidden">
+                      <button class="item__descroption-btn" type="button">
+                        Заказать
+                      </button>
+                    </div>
                   </div>
                 </section>
               </div>
               <div>
-                <section class="item" id="one">
+                <section class="item">
                   <div class="item__card">
                     <img src="/src/assets/img/shirt-main.png" alt="Картинка футболки" class="item__card-img" width="330"
                       height="330">
@@ -161,7 +163,7 @@
                 </section>
               </div>
               <div>
-                <section class="item" id="one">
+                <section class="item">
                   <div class="item__card">
                     <img src="/src/assets/img/shirt-main.png" alt="Картинка футболки" class="item__card-img" width="330"
                       height="330">
@@ -185,7 +187,7 @@
                 </section>
               </div>
               <div>
-                <section class="item" id="one">
+                <section class="item">
                   <div class="item__card">
                     <img src="/src/assets/img/shirt-main.png" alt="Картинка футболки" class="item__card-img" width="330"
                       height="330">
@@ -209,7 +211,7 @@
                 </section>
               </div>
               <div>
-                <section class="item" id="one">
+                <section class="item">
                   <div class="item__card">
                     <img src="/src/assets/img/shirt-main.png" alt="Картинка футболки" class="item__card-img" width="330"
                       height="330">
@@ -233,7 +235,7 @@
                 </section>
               </div>
               <div>
-                <section class="item" id="one">
+                <section class="item">
                   <div class="item__card">
                     <img src="/src/assets/img/shirt-main.png" alt="Картинка футболки" class="item__card-img" width="330"
                       height="330">
@@ -257,7 +259,7 @@
                 </section>
               </div>
               <div>
-                <section class="item" id="one">
+                <section class="item">
                   <div class="item__card">
                     <img src="/src/assets/img/shirt-main.png" alt="Картинка футболки" class="item__card-img" width="330"
                       height="330">
@@ -281,7 +283,7 @@
                 </section>
               </div>
               <div>
-                <section class="item" id="one">
+                <section class="item">
                   <div class="item__card">
                     <img src="/src/assets/img/shirt-main.png" alt="Картинка футболки" class="item__card-img" width="330"
                       height="330">
@@ -305,7 +307,7 @@
                 </section>
               </div>
               <div>
-                <section class="item" id="one">
+                <section class="item">
                   <div class="item__card">
                     <img src="/src/assets/img/shirt-main.png" alt="Картинка футболки" class="item__card-img" width="330"
                       height="330">
@@ -329,7 +331,7 @@
                 </section>
               </div>
               <div>
-                <section class="item" id="one">
+                <section class="item">
                   <div class="item__card">
                     <img src="/src/assets/img/shirt-main.png" alt="Картинка футболки" class="item__card-img" width="330"
                       height="330">
@@ -353,7 +355,7 @@
                 </section>
               </div>
               <div>
-                <section class="item" id="one">
+                <section class="item">
                   <div class="item__card">
                     <img src="/src/assets/img/shirt-main.png" alt="Картинка футболки" class="item__card-img" width="330"
                       height="330">
@@ -388,20 +390,28 @@
         <div class="footer__content-contacts">
           <div class="contacts-copyright">© Kolesa Group</div>
           <ul class="contacts-icons">
-            <li class="contacts-icons__instagram"><a href="https://www.instagram.com/kolesagroup/" target="_blank"
-                title="Участвуй в наших конкурсах в Instagram!"><img src="/src/assets/icons/instagram.svg"
-                  alt="иконка Инстаграма" width="24px" height="24px"></a></li>
-            <li class="contacts-icons__youtube"><a href="https://www.youtube.com/user/kolesakzvideo" target="_blank"
-                title="Смотри наши видео на YouTube!"><img src="/src/assets/icons/youtube.svg" alt="икона Ютуба"
-                  width="24px" height="24px"></a></li>
-            <li class="contacts-icons__vk"><a href="https://vk.com/kolesakz" target="_blank"
-                title="Присоеденяйся к нам в VK!"><img src="/src/assets/icons/vk.svg" alt="иконка Вконтакте"
-                  width="24px" height="24px"></a></li>
+            <li class="contacts-icons__instagram">
+              <a href="https://www.instagram.com/kolesagroup/" target="_blank"
+                title="Участвуй в наших конкурсах в Instagram!">
+                <img src="/src/assets/icons/instagram.svg" alt="иконка Инстаграма" width="24" height="24">
+              </a>
+            </li>
+            <li class="contacts-icons__youtube">
+              <a href="https://www.youtube.com/user/kolesakzvideo" target="_blank"
+                title="Смотри наши видео на YouTube!">
+                <img src="/src/assets/icons/youtube.svg" alt="икона Ютуба" width="24" height="24">
+              </a>
+            </li>
+            <li class="contacts-icons__vk">
+              <a href="https://vk.com/kolesakz" target="_blank" title="Присоеденяйся к нам в VK!">
+                <img src="/src/assets/icons/vk.svg" alt="иконка Вконтакте" width="24" height="24">
+              </a>
+            </li>
           </ul>
         </div>
         <div class="footer__content-ideas">
           <p class="ideas__text">Есть идеи что улучшить? <br> Не знаешь, с кем решить проблему?</p>
-          <button class="ideas__btn">Написать</button>
+          <button type="button" class="ideas__btn">Написать</button>
         </div>
       </div>
     </footer>
