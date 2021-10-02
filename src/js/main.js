@@ -2,7 +2,7 @@ import '../css/style.css';
 
 const modal = document.getElementById('mod');
 
-const item = document.getElementsByClassName('items-1')[0];
+const item = document.getElementById('one');
 
 const span = document.getElementsByClassName('close')[0];
 
