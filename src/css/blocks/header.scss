@@ -46,51 +46,51 @@
         width: 24px;
         height: 24px;
     }
+}
 
-    &-profile {
-        & button {
-            display: flex;
-            text-decoration: none;
-            border: none;
-            padding: 0;
-            background: #fff;
-            text-align: start;
-            cursor: pointer;
+.header-items-profile {
+    & button {
+        display: flex;
+        text-decoration: none;
+        border: none;
+        padding: 0;
+        background: #fff;
+        text-align: start;
+        cursor: pointer;
+    }
+
+    &__icon {
+        display: block;
+        border-radius: 50%;
+        margin-right: 16px;
+        cursor: pointer;
+        box-sizing: border-box;
+        border: 1px solid rgba(42, 129, 221, 0.2);
+
+        &:hover {
+            border: 1px solid $not-active-text-color;
         }
+    }
 
-        &__icon {
-            display: block;
-            border-radius: 50%;
-            margin-right: 16px;
+    &__text {
+        &--name {
+            @include text-style-bold($color: $not-active-text-color);
+
             cursor: pointer;
-            box-sizing: border-box;
-            border: 1px solid rgba(42, 129, 221, 0.2);
 
             &:hover {
-                border: 1px solid $not-active-text-color;
+                color: $active-text-color;
             }
         }
 
-        &__text {
-            &--name {
-                @include text-style-bold($color: $not-active-text-color);
+        &--balls {
+            @include text-style-regular($size: 13px, $height: 20px);
 
-                cursor: pointer;
+            justify-self: flex-start;
+            cursor: pointer;
 
-                &:hover {
-                    color: $active-text-color;
-                }
-            }
-
-            &--balls {
-                @include text-style-regular($size: 13px, $height: 20px);
-
-                justify-self: flex-start;
-                cursor: pointer;
-
-                &:hover {
-                    color: $active-text-color;
-                }
+            &:hover {
+                color: $active-text-color;
             }
         }
     }
