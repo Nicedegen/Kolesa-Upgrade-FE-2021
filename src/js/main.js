@@ -1,10 +1,10 @@
-import '../css/style.css';
+import '../css/style.scss';
 
 const modal = document.getElementById('mod');
 
 const item = document.getElementById('one');
 
-const span = document.getElementsByClassName('close')[0];
+const span = document.getElementsByClassName('modal-content__close')[0];
 
 item.onclick = function () {
     modal.style.display = 'block';

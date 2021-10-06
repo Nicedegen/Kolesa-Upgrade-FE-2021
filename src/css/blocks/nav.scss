@@ -1,0 +1,50 @@
+.content-indent {
+    margin: 24px 0 68px 32px;
+}
+
+.nav-indent {
+    margin: 8px 128px 0 0;
+}
+
+.content {
+    &-inner {
+        display: flex;
+    }
+
+    &-nav {
+        min-width: 156px;
+        box-sizing: padding-box;
+    }
+
+    &-nav-menu {
+        list-style-type: none;
+        white-space: nowrap;
+
+        li {
+            margin-bottom: 25px;
+            position: relative;
+        }
+
+        &__item {
+            a {
+                text-decoration: none;
+
+                @include text-style-regular($size: 16px);
+            }
+
+            &--active::before {
+                content: url(/src/assets/icons/Rectangle.png);
+                position: absolute;
+                top: -5px;
+                left: -10px;
+            }
+
+            a:active,
+            a:hover,
+            span,
+            &--active a {
+                font-weight: 600;
+            }
+        }
+    }
+}

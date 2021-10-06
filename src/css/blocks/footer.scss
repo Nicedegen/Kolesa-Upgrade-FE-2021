@@ -1,0 +1,56 @@
+.footer {
+    flex-shrink: 1;
+}
+
+.footer-content {
+    background-color: $main-text-color;
+    color: $white-color;
+    display: flex;
+    justify-content: space-between;
+}
+
+.footer-content-contacts {
+    &__copyright {
+        padding: 20px 0 8px 32px;
+    }
+
+    &__icons {
+        list-style-type: none;
+        display: flex;
+        margin: 8px 0 24px 36px;
+    }
+
+    &__instagram,
+    &__youtube,
+    &__vk {
+        @include image-style;
+
+        margin-right: 12px;
+    }
+}
+
+.footer-content-ideas {
+    display: flex;
+
+    &__text {
+        @include text-style-regular($color: $white-color);
+
+        align-self: center;
+        margin-right: 48px;
+    }
+
+    &__btn {
+        @include border-radius(8px);
+
+        width: 150px;
+        height: 38px;
+        align-self: center;
+        cursor: pointer;
+        margin: 0 40px;
+
+        &:hover {
+            height: 50px;
+            transition: height 0.5s linear;
+        }
+    }
+}

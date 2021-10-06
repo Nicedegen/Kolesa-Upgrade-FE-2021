@@ -18,22 +18,23 @@
     <div class="body-inner__page">
       <!-------------- SECTION HEADER START  -------------->
       <header class="header">
-        <ul class="header__items">
-          <li class="items__emblem"></li>
-          <li class="items__scan">
+        <ul class="header-items header-indent">
+          <li class="header-items__emblem"><a href="#" width="100" height="100"><img src="/src/assets/icons/Kolesa.svg"
+                alt="Ссылка с Эмблемой компании" width="222" height="36"></a></li>
+          <li class="header-items__scan">
             <form>
-              <button type="submit" class="scan-btn"></button>
-              <input type="search" placeholder="Поиск">
+              <button type="submit" class="header-items__btn"></button>
+              <input type="search" placeholder="Поиск" title="Введите наименование товара">
             </form>
           </li>
-          <li class="items__profile">
+          <li class="header-items-profile">
             <button type="button">
-              <img src="/src/assets/icons/profile-icon.png" alt="Иконка профиля" class="profile-icon" width="44"
-                height="44">
-              <span class="profile-text">
-                <span class="text-name">Мортиджан</span>
+              <img src="/src/assets/icons/profile-icon.png" alt="Иконка профиля" class="header-items-profile__icon"
+                width="44" height="44">
+              <span class="header-items-profile__text">
+                <span class="header-items-profile__text--name">Мортиджан</span>
                 <br>
-                <span class="text-balls">300 Балов</span>
+                <span class="header-items-profile__text--balls">300 Балов</span>
               </span>
             </button>
           </li>
@@ -42,337 +43,338 @@
       <!-------------- SECTION HEADER END  -------------->
       <!-------------- SECTION NAV START  -------------->
       <section class="content">
-        <div class="content-inner">
-          <div class="content-nav">
-            <nav class="nav__menu">
-              <ul class="nav__menu-items">
-                <li class="menu-item"><a href="#">Оргсхема</a></li>
-                <li class="menu-item"><a href="#">Kolesa <span>Team</span></a></li>
-                <li class="menu-item item-active"><a href="#">Kolesa shop</a></li>
-                <li class="menu-item"><a href="#">Картина компании</a></li>
-                <li class="menu-item"><a href="#">Новости</a></li>
-                <li class="menu-item"><a href="#">Education</a></li>
-                <li class="menu-item"><a href="#">Guidelines</a></li>
-                <li class="menu-item"><a href="#">Библиотека</a></li>
-                <li class="menu-item"><a href="#">FAQ</a></li>
+        <div class="content-inner content-indent">
+          <div class="content-nav nav-indent">
+            <nav>
+              <ul class="content-nav-menu">
+                <li class="content-nav-menu__item"><a href="#">Оргсхема</a></li>
+                <li class="content-nav-menu__item"><a href="#">Kolesa <span>Team</span></a></li>
+                <li class="content-nav-menu__item content-nav-menu__item--active"><a href="#">Kolesa shop</a></li>
+                <li class="content-nav-menu__item"><a href="#">Картина компании</a></li>
+                <li class="content-nav-menu__item"><a href="#">Новости</a></li>
+                <li class="content-nav-menu__item"><a href="#">Education</a></li>
+                <li class="content-nav-menu__item"><a href="#">Guidelines</a></li>
+                <li class="content-nav-menu__item"><a href="#">Библиотека</a></li>
+                <li class="content-nav-menu__item"><a href="#">FAQ</a></li>
               </ul>
             </nav>
           </div>
           <!-------------- SECTION NAV END  -------------->
           <!-------------- SECTION MAIN START  -------------->
           <section class="main">
-            <div class="main__inner">
-              <div class="main__content">
-                <div class="main__content-banner">
+            <div class="main-inner">
+              <div class="main-content">
+                <div class="main-content-banner">
                   <img src="/src/assets/img/banner.png" alt="Главный банер акций" width="100%" height="340">
                 </div>
-                <div class="main__content-balls">
-                  <button type="button" class="balls__receive">
+                <div class="main-content__balls">
+                  <button type="button" class="main-content__balls-receive">
                     <span class="receive__icon-plus"></span>
                     <span class="receive__text">Получить балы</span>
                   </button>
-                  <button type="button" class="balls__plus">
-                    <span class="receive__icon-question"></span>
-                    <span class="receive__text">Как получить балы</span>
+                  <button type="button" class="main-content__balls-plus">
+                    <span class="plus__icon-question"></span>
+                    <span class="plus__text">Как получить балы</span>
                   </button>
-                  <button type="button" class="balls__gift">
-                    <span class="receive__icon-gift"></span>
-                    <span class="receive__text">Подарить балы</span>
+                  <button type="button" class="main-content__balls-gift">
+                    <span class="gift__icon-gift"></span>
+                    <span class="gift__text">Подарить балы</span>
                   </button>
                 </div>
-                <div class="main__content-choise">
-                  <button type="button" class="choise__all choise-active">Все товары</button>
-                  <button type="button" class="choise__clothes">Одежда</button>
-                  <button type="button" class="choise__accessories">Аксессуары</button>
+                <div class="main-content-choise">
+                  <button type="button" class="main-content-choise__all choise-active">Все товары</button>
+                  <button type="button" class="main-content-choise__clothes">Одежда</button>
+                  <button type="button" class="main-content-choise__accessories">Аксессуары</button>
                 </div>
               </div>
             </div>
-            <main class="main__content-items">
+
+            <!-----------------  SECTION MAIN CARD --------------- -->
+
+            <main class="main-content-items main-indent">
+              <section class="main-content__item">
+                <div class="main-content__card">
+                  <img src="/src/assets/img/shirt-main.png" alt="Картинка футболки" class="main-content__card-img"
+                    width="330" height="330">
+                  <span class="main-content__badge">new</span>
+                </div>
+                <div class="main-content__description">
+                  <span class="main-content__description-price">
+                    220 баллов
+                  </span>
+                  <h3 class="main-content__description-title">
+                    Футболка "Эволюционируй или сдохни"
+                  </h3>
+                  <span class="main-content__description-hint">
+                    Размеры S/M/L
+                  </span>
+                </div>
+                <div class="main-content__description-hidden" id="one">
+                  <button class="main-content__description-btn" type="button">
+                    Заказать
+                  </button>
+                </div>
+              </section>
               <div>
-                <section class="item" id="one">
-                  <div class="item__card">
-                    <img src="/src/assets/img/shirt-main.png" alt="Картинка футболки" class="item__card-img" width="330"
-                      height="330">
-                    <span class="item__badge">new</span>
+                <section class="main-content__item">
+                  <div class="main-content__card">
+                    <img src="/src/assets/img/shirt-main.png" alt="Картинка футболки" class="main-content__card-img"
+                      width="330" height="330">
+                    <span class="main-content__badge">new</span>
                   </div>
-                  <div class="item__description">
-                    <span class="item__description-price">
+                  <div class="main-content__description">
+                    <span class="main-content__description-price">
                       220 баллов
                     </span>
-                    <h3 class="item__descroption-title">
+                    <h3 class="main-content__description-title">
                       Футболка "Эволюционируй или сдохни"
                     </h3>
-                    <span class="item__descroption-hint">
+                    <span class="main-content__description-hint">
                       Размеры S/M/L
                     </span>
                   </div>
-                  <div class="item__descroption-hidden">
-                    <button class="item__descroption-btn" type="button">
+                  <div class="main-content__description-hidden">
+                    <button class="main-content__description-btn" type="button">
                       Заказать
                     </button>
                   </div>
                 </section>
               </div>
               <div>
-                <section class="item">
-                  <div class="item__card">
-                    <img src="/src/assets/img/shirt-main.png" alt="Картинка футболки" class="item__card-img" width="330"
-                      height="330">
-                    <span class="item__badge">new</span>
+                <section class="main-content__item">
+                  <div class="main-content__card">
+                    <img src="/src/assets/img/shirt-main.png" alt="Картинка футболки" class="main-content__card-img"
+                      width="330" height="330">
                   </div>
-                  <div class="item__description">
-                    <div class="item__description-price">
+                  <div class="main-content__description">
+                    <span class="main-content__description-price">
                       220 баллов
-                    </div>
-                    <h3 class="item__descroption-title">
+                    </span>
+                    <h3 class="main-content__description-title">
                       Футболка "Эволюционируй или сдохни"
                     </h3>
-                    <div class="item__descroption-hint">
+                    <span class="main-content__description-hint">
                       Размеры S/M/L
-                    </div>
-                    <div class="item__descroption-hidden">
-                      <button class="item__descroption-btn" type="button">
-                        Заказать
-                      </button>
-                    </div>
+                    </span>
                   </div>
-                </section>
-              </div>
-              <div>
-                <section class="item">
-                  <div class="item__card">
-                    <img src="/src/assets/img/shirt-main.png" alt="Картинка футболки" class="item__card-img" width="330"
-                      height="330">
-                  </div>
-                  <div class="item__description">
-                    <div class="item__description-price">
-                      220 баллов
-                    </div>
-                    <h3 class="item__descroption-title">
-                      Футболка "Эволюционируй или сдохни"
-                    </h3>
-                    <div class="item__descroption-hint">
-                      Размеры S/M/L
-                    </div>
-                  </div>
-                  <div class="item__descroption-hidden">
-                    <button class="item__descroption-btn" type="button">
+                  <div class="main-content__description-hidden">
+                    <button class="main-content__description-btn" type="button">
                       Заказать
                     </button>
                   </div>
                 </section>
               </div>
               <div>
-                <section class="item">
-                  <div class="item__card">
-                    <img src="/src/assets/img/shirt-main.png" alt="Картинка футболки" class="item__card-img" width="330"
-                      height="330">
+                <section class="main-content__item">
+                  <div class="main-content__card">
+                    <img src="/src/assets/img/shirt-main.png" alt="Картинка футболки" class="main-content__card-img"
+                      width="330" height="330">
                   </div>
-                  <div class="item__description">
-                    <div class="item__description-price">
+                  <div class="main-content__description">
+                    <span class="main-content__description-price">
                       220 баллов
-                    </div>
-                    <h3 class="item__descroption-title">
+                    </span>
+                    <h3 class="main-content__description-title">
                       Футболка "Эволюционируй или сдохни"
                     </h3>
-                    <div class="item__descroption-hint">
+                    <span class="main-content__description-hint">
                       Размеры S/M/L
-                    </div>
+                    </span>
                   </div>
-                  <div class="item__descroption-hidden">
-                    <button class="item__descroption-btn" type="button">
+                  <div class="main-content__description-hidden">
+                    <button class="main-content__description-btn" type="button">
                       Заказать
                     </button>
                   </div>
                 </section>
               </div>
               <div>
-                <section class="item">
-                  <div class="item__card">
-                    <img src="/src/assets/img/shirt-main.png" alt="Картинка футболки" class="item__card-img" width="330"
-                      height="330">
+                <section class="main-content__item">
+                  <div class="main-content__card">
+                    <img src="/src/assets/img/shirt-main.png" alt="Картинка футболки" class="main-content__card-img"
+                      width="330" height="330">
                   </div>
-                  <div class="item__description">
-                    <div class="item__description-price">
+                  <div class="main-content__description">
+                    <span class="main-content__description-price">
                       220 баллов
-                    </div>
-                    <h3 class="item__descroption-title">
+                    </span>
+                    <h3 class="main-content__description-title">
                       Футболка "Эволюционируй или сдохни"
                     </h3>
-                    <div class="item__descroption-hint">
+                    <span class="main-content__description-hint">
                       Размеры S/M/L
-                    </div>
+                    </span>
                   </div>
-                  <div class="item__descroption-hidden">
-                    <button class="item__descroption-btn" type="button">
+                  <div class="main-content__description-hidden">
+                    <button class="main-content__description-btn" type="button">
                       Заказать
                     </button>
                   </div>
                 </section>
               </div>
               <div>
-                <section class="item">
-                  <div class="item__card">
-                    <img src="/src/assets/img/shirt-main.png" alt="Картинка футболки" class="item__card-img" width="330"
-                      height="330">
+                <section class="main-content__item">
+                  <div class="main-content__card">
+                    <img src="/src/assets/img/shirt-main.png" alt="Картинка футболки" class="main-content__card-img"
+                      width="330" height="330">
                   </div>
-                  <div class="item__description">
-                    <div class="item__description-price">
+                  <div class="main-content__description">
+                    <span class="main-content__description-price">
                       220 баллов
-                    </div>
-                    <h3 class="item__descroption-title">
+                    </span>
+                    <h3 class="main-content__description-title">
                       Футболка "Эволюционируй или сдохни"
                     </h3>
-                    <div class="item__descroption-hint">
+                    <span class="main-content__description-hint">
                       Размеры S/M/L
-                    </div>
+                    </span>
                   </div>
-                  <div class="item__descroption-hidden">
-                    <button class="item__descroption-btn" type="button">
+                  <div class="main-content__description-hidden">
+                    <button class="main-content__description-btn" type="button">
                       Заказать
                     </button>
                   </div>
                 </section>
               </div>
               <div>
-                <section class="item">
-                  <div class="item__card">
-                    <img src="/src/assets/img/shirt-main.png" alt="Картинка футболки" class="item__card-img" width="330"
-                      height="330">
+                <section class="main-content__item">
+                  <div class="main-content__card">
+                    <img src="/src/assets/img/shirt-main.png" alt="Картинка футболки" class="main-content__card-img"
+                      width="330" height="330">
                   </div>
-                  <div class="item__description">
-                    <div class="item__description-price">
+                  <div class="main-content__description">
+                    <span class="main-content__description-price">
                       220 баллов
-                    </div>
-                    <h3 class="item__descroption-title">
+                    </span>
+                    <h3 class="main-content__description-title">
                       Футболка "Эволюционируй или сдохни"
                     </h3>
-                    <div class="item__descroption-hint">
+                    <span class="main-content__description-hint">
                       Размеры S/M/L
-                    </div>
+                    </span>
                   </div>
-                  <div class="item__descroption-hidden">
-                    <button class="item__descroption-btn" type="button">
+                  <div class="main-content__description-hidden">
+                    <button class="main-content__description-btn" type="button">
                       Заказать
                     </button>
                   </div>
                 </section>
               </div>
               <div>
-                <section class="item">
-                  <div class="item__card">
-                    <img src="/src/assets/img/shirt-main.png" alt="Картинка футболки" class="item__card-img" width="330"
-                      height="330">
+                <section class="main-content__item">
+                  <div class="main-content__card">
+                    <img src="/src/assets/img/shirt-main.png" alt="Картинка футболки" class="main-content__card-img"
+                      width="330" height="330">
                   </div>
-                  <div class="item__description">
-                    <div class="item__description-price">
+                  <div class="main-content__description">
+                    <span class="main-content__description-price">
                       220 баллов
-                    </div>
-                    <h3 class="item__descroption-title">
+                    </span>
+                    <h3 class="main-content__description-title">
                       Футболка "Эволюционируй или сдохни"
                     </h3>
-                    <div class="item__descroption-hint">
+                    <span class="main-content__description-hint">
                       Размеры S/M/L
-                    </div>
+                    </span>
                   </div>
-                  <div class="item__descroption-hidden">
-                    <button class="item__descroption-btn" type="button">
+                  <div class="main-content__description-hidden">
+                    <button class="main-content__description-btn" type="button">
                       Заказать
                     </button>
                   </div>
                 </section>
               </div>
               <div>
-                <section class="item">
-                  <div class="item__card">
-                    <img src="/src/assets/img/shirt-main.png" alt="Картинка футболки" class="item__card-img" width="330"
-                      height="330">
+                <section class="main-content__item">
+                  <div class="main-content__card">
+                    <img src="/src/assets/img/shirt-main.png" alt="Картинка футболки" class="main-content__card-img"
+                      width="330" height="330">
                   </div>
-                  <div class="item__description">
-                    <div class="item__description-price">
+                  <div class="main-content__description">
+                    <span class="main-content__description-price">
                       220 баллов
-                    </div>
-                    <h3 class="item__descroption-title">
+                    </span>
+                    <h3 class="main-content__description-title">
                       Футболка "Эволюционируй или сдохни"
                     </h3>
-                    <div class="item__descroption-hint">
+                    <span class="main-content__description-hint">
                       Размеры S/M/L
-                    </div>
+                    </span>
                   </div>
-                  <div class="item__descroption-hidden">
-                    <button class="item__descroption-btn" type="button">
+                  <div class="main-content__description-hidden">
+                    <button class="main-content__description-btn" type="button">
                       Заказать
                     </button>
                   </div>
                 </section>
               </div>
               <div>
-                <section class="item">
-                  <div class="item__card">
-                    <img src="/src/assets/img/shirt-main.png" alt="Картинка футболки" class="item__card-img" width="330"
-                      height="330">
+                <section class="main-content__item">
+                  <div class="main-content__card">
+                    <img src="/src/assets/img/shirt-main.png" alt="Картинка футболки" class="main-content__card-img"
+                      width="330" height="330">
                   </div>
-                  <div class="item__description">
-                    <div class="item__description-price">
+                  <div class="main-content__description">
+                    <span class="main-content__description-price">
                       220 баллов
-                    </div>
-                    <h3 class="item__descroption-title">
+                    </span>
+                    <h3 class="main-content__description-title">
                       Футболка "Эволюционируй или сдохни"
                     </h3>
-                    <div class="item__descroption-hint">
+                    <span class="main-content__description-hint">
                       Размеры S/M/L
-                    </div>
+                    </span>
                   </div>
-                  <div class="item__descroption-hidden">
-                    <button class="item__descroption-btn" type="button">
+                  <div class="main-content__description-hidden">
+                    <button class="main-content__description-btn" type="button">
                       Заказать
                     </button>
                   </div>
                 </section>
               </div>
               <div>
-                <section class="item">
-                  <div class="item__card">
-                    <img src="/src/assets/img/shirt-main.png" alt="Картинка футболки" class="item__card-img" width="330"
-                      height="330">
+                <section class="main-content__item">
+                  <div class="main-content__card">
+                    <img src="/src/assets/img/shirt-main.png" alt="Картинка футболки" class="main-content__card-img"
+                      width="330" height="330">
                   </div>
-                  <div class="item__description">
-                    <div class="item__description-price">
+                  <div class="main-content__description">
+                    <span class="main-content__description-price">
                       220 баллов
-                    </div>
-                    <h3 class="item__descroption-title">
+                    </span>
+                    <h3 class="main-content__description-title">
                       Футболка "Эволюционируй или сдохни"
                     </h3>
-                    <div class="item__descroption-hint">
+                    <span class="main-content__description-hint">
                       Размеры S/M/L
-                    </div>
+                    </span>
                   </div>
-                  <div class="item__descroption-hidden">
-                    <button class="item__descroption-btn" type="button">
+                  <div class="main-content__description-hidden">
+                    <button class="main-content__description-btn" type="button">
                       Заказать
                     </button>
                   </div>
                 </section>
               </div>
               <div>
-                <section class="item">
-                  <div class="item__card">
-                    <img src="/src/assets/img/shirt-main.png" alt="Картинка футболки" class="item__card-img" width="330"
-                      height="330">
+                <section class="main-content__item">
+                  <div class="main-content__card">
+                    <img src="/src/assets/img/shirt-main.png" alt="Картинка футболки" class="main-content__card-img"
+                      width="330" height="330">
                   </div>
-                  <div class="item__description">
-                    <div class="item__description-price">
+                  <div class="main-content__description">
+                    <span class="main-content__description-price">
                       220 баллов
-                    </div>
-                    <h3 class="item__descroption-title">
+                    </span>
+                    <h3 class="main-content__description-title">
                       Футболка "Эволюционируй или сдохни"
                     </h3>
-                    <div class="item__descroption-hint">
+                    <span class="main-content__description-hint">
                       Размеры S/M/L
-                    </div>
+                    </span>
                   </div>
-                  <div class="item__descroption-hidden">
-                    <button class="item__descroption-btn" type="button">
+                  <div class="main-content__description-hidden">
+                    <button class="main-content__description-btn" type="button">
                       Заказать
                     </button>
                   </div>
@@ -386,114 +388,117 @@
     <!-------------- SECTION MAIN END  -------------->
     <!-------------- SECTION FOOTER START  -------------->
     <footer class="footer">
-      <div class="footer__content">
-        <div class="footer__content-contacts">
-          <div class="contacts-copyright">© Kolesa Group</div>
-          <ul class="contacts-icons">
-            <li class="contacts-icons__instagram">
+      <div class="footer-content">
+        <div class="footer-content-contacts">
+          <div class="footer-content-contacts__copyright">© Kolesa Group</div>
+          <ul class="footer-content-contacts__icons">
+            <li class="footer-content-contacts__instagram">
               <a href="https://www.instagram.com/kolesagroup/" target="_blank"
                 title="Участвуй в наших конкурсах в Instagram!">
                 <img src="/src/assets/icons/instagram.svg" alt="иконка Инстаграма" width="24" height="24">
               </a>
             </li>
-            <li class="contacts-icons__youtube">
+            <li class="footer-content-contacts__youtube">
               <a href="https://www.youtube.com/user/kolesakzvideo" target="_blank"
                 title="Смотри наши видео на YouTube!">
                 <img src="/src/assets/icons/youtube.svg" alt="икона Ютуба" width="24" height="24">
               </a>
             </li>
-            <li class="contacts-icons__vk">
+            <li class="footer-content-contacts__vk">
               <a href="https://vk.com/kolesakz" target="_blank" title="Присоеденяйся к нам в VK!">
                 <img src="/src/assets/icons/vk.svg" alt="иконка Вконтакте" width="24" height="24">
               </a>
             </li>
           </ul>
         </div>
-        <div class="footer__content-ideas">
-          <p class="ideas__text">Есть идеи что улучшить? <br> Не знаешь, с кем решить проблему?</p>
-          <button type="button" class="ideas__btn">Написать</button>
+        <div class="footer-content-ideas">
+          <p class="footer-content-ideas__text">Есть идеи что улучшить? <br> Не знаешь, с кем решить проблему?</p>
+          <button type="button" class="footer-content-ideas__btn">Написать</button>
         </div>
       </div>
     </footer>
     <!-------------- SECTION FOOTER END  -------------->
     <!-------------- SECTION MOD START  -------------->
 
-    <div id="mod" class="modal">
-      <div class="modal-content">
-        <button class="close"></button>
-        <div class="modal__main">
-          <div class="modal__main-card">
-            <div class="card-big"><img src="/src/assets/img/shirt-modal.png"
+    <div id="mod" class="modal modal-indent">
+      <div class="modal-content modal-content-position">
+        <button class="modal-content__close"></button>
+        <div class="modal-content__main">
+          <div class="modal-content__card">
+            <div class="modal-content__card--big"><img src="/src/assets/img/shirt-modal.png"
                 alt="Футболка с надписью 'Эволюционируй или сдохни'"></div>
-            <div class="card-little">
-              <ul>
-                <li class="little-1"></li>
-                <li class="little-2 active"></li>
-                <li class="little-3"></li>
+            <div>
+              <ul class="cards-little">
+                <li class="modal-content__card--little"><img src="/src/assets/icons/image-girl.png" alt="иконка товара">
+                </li>
+                <li class="modal-content__card--little card-active"><img src="/src/assets/icons/t-shirt-sml.png"
+                    alt="иконка товара">
+                </li>
+                <li class="modal-content__card--little"><img src="/src/assets/icons/image-man.png" alt="иконка товара">
+                </li>
               </ul>
             </div>
           </div>
-          <div class="modal__main-info">
-            <section class="info-header">
-              <h2 class="info-title-text">Футболка "Эволюционируй или сдохни"</h2>
-              <div class="info-title">
-                <div class="info-title__info">
-                  <div class="info-title-balls">100 балов</div>
-                  <input type="button" value="Попросить 50 балов" class="info-title-btn">
-                </div>
-                <div class="info-balans">
-                  <div class="info-balans__text">
-                    <h2 class="text-title">Твой баланс:</h2>
-                    <h3 class="text-subtitle">50 Балов</h3>
-                  </div>
+          <div class="modal-main-info info-indent">
+            <section class="modal-main-info info-title">
+              <div>
+                <h2 class="modal-main-info__title">Футболка "Эволюционируй или сдохни"</h2>
+                <div class="modal-main-info__title--how-balls">100 балов</div>
+                <input type="button" value="Попросить 50 балов" class="modal-main-info__title--yellow-btn">
+              </div>
+              <div class="modal-main-info__balance">
+                <div class="modal-main-info__text">
+                  <h2 class="modal-main-info__text--title">Твой баланс:</h2>
+                  <h3 class="modal-main-info__text--subtitle">50 Балов</h3>
                 </div>
               </div>
             </section>
-            <section class="info-colors">
-              <p class="colors-text">Цвета:</p>
-              <form action="" class="choise-color">
-                <div class="radio">
-                  <input type="radio" name="colors" id="blue" value="blue" class="radio-input" checked>
-                  <label for="blue" class="radio-label1">Синий</label>
+            <section class="modal-main-info__colors">
+              <p class="modal-main-info__colors-text">Цвета:</p>
+              <form action="" class="modal-main-info__choise-color">
+                <div class="modal-main-info__radio">
+                  <input type="radio" name="colors" id="blue" value="blue" class="modal-main-info__input" checked>
+                  <label for="blue" class="modal-main-info__label label-1">Синий</label>
                 </div>
-                <div class="radio">
-                  <input type="radio" name="colors" id="biege" value="biege" class="radio-input">
-                  <label for="biege" class="radio-label2">Бежевый</label>
+                <div class="modal-main-info__radio">
+                  <input type="radio" name="colors" id="biege" value="biege" class="modal-main-info__input">
+                  <label for="biege" class="modal-main-info__label label-2">Бежевый</label>
                 </div>
-                <div class="radio">
-                  <input type="radio" name="colors" id="gray" value="gray" class="radio-input">
-                  <label for="gray" class="radio-label3">Серый</label>
-                </div>
-              </form>
-            </section>
-            <section class="info-size">
-              <p class="size-text">Размер:</p>
-              <form action="" class="form-size">
-                <div class="radio-size">
-                  <input type="radio" name="size" id="S" value="S" class="input-size active-size" checked>
-                  <label for="S" class="label-size">S</label>
-                </div>
-                <div class="radio-size">
-                  <input type="radio" name="size" id="M" value="M" class="input-size">
-                  <label for="M" class="label-size">M</label>
-                </div>
-                <div class="radio-size">
-                  <input type="radio" name="size" id="L" value="L" class="input-size">
-                  <label for="L" class="label-size">L</label>
+                <div class="modal-main-info__radio">
+                  <input type="radio" name="colors" id="gray" value="gray" class="modal-main-info__input">
+                  <label for="gray" class="modal-main-info__label label-3">Серый</label>
                 </div>
               </form>
             </section>
-            <section class="info-descr">
-              <p class="descr-details">
+            <section class="modal-main-info__size">
+              <p class="modal-main-info__size-text">Размер:</p>
+              <form action="#" class="modal-main-info__form-size">
+                <div class="modal-main-info__radio-size">
+                  <input type="radio" name="size" id="S" value="S" class="modal-main-info__input-size active-size"
+                    checked>
+                  <label for="S" class="modal-main-info__label-size">S</label>
+                </div>
+                <div class="modal-main-info__radio-size">
+                  <input type="radio" name="size" id="M" value="M" class="modal-main-info__input-size">
+                  <label for="M" class="modal-main-info__label-size">M</label>
+                </div>
+                <div class="modal-main-info__radio-size">
+                  <input type="radio" name="size" id="L" value="L" class="modal-main-info__input-size">
+                  <label for="L" class="modal-main-info__label-size">L</label>
+                </div>
+              </form>
+            </section>
+            <section class="modal-main-info__descr">
+              <p class="modal-main-info__descr--bold">
                 Детали:
               </p>
-              <p class="descr-interpretation">
+              <p class="modal-main-info__descr--regular">
                 Брендированная толстовка от Qazaq Republic. Материал: Хлопок 80%, Вискоза 20%
               </p>
-              <p class="descr-details">
+              <p class="modal-main-info__descr--bold">
                 Как выбрать размер:
               </p>
-              <p class="descr-interpretation">
+              <p class="modal-main-info__descr--regular">
                 Написать дяде Рику для уточнения.
               </p>
             </section>
