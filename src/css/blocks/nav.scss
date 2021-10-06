@@ -6,45 +6,43 @@
     margin: 8px 128px 0 0;
 }
 
-.content {
-    &-inner {
-        display: flex;
+.content-inner {
+    display: flex;
+}
+
+.content-nav {
+    min-width: 156px;
+    box-sizing: padding-box;
+}
+
+.content-nav-menu {
+    list-style-type: none;
+    white-space: nowrap;
+
+    li {
+        margin-bottom: 25px;
+        position: relative;
     }
 
-    &-nav {
-        min-width: 156px;
-        box-sizing: padding-box;
-    }
+    &__item {
+        a {
+            text-decoration: none;
 
-    &-nav-menu {
-        list-style-type: none;
-        white-space: nowrap;
-
-        li {
-            margin-bottom: 25px;
-            position: relative;
+            @include text-style-regular($size: 16px);
         }
 
-        &__item {
-            a {
-                text-decoration: none;
+        &--active::before {
+            content: url(/src/assets/icons/Rectangle.png);
+            position: absolute;
+            top: -5px;
+            left: -10px;
+        }
 
-                @include text-style-regular($size: 16px);
-            }
-
-            &--active::before {
-                content: url(/src/assets/icons/Rectangle.png);
-                position: absolute;
-                top: -5px;
-                left: -10px;
-            }
-
-            a:active,
-            a:hover,
-            span,
-            &--active a {
-                font-weight: 600;
-            }
+        a:active,
+        a:hover,
+        span,
+        &--active a {
+            font-weight: 600;
         }
     }
 }
