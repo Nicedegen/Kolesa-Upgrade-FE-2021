@@ -4,7 +4,6 @@
 
 .main-content-balls {
     list-style-type: none;
-    display: flex;
     justify-content: space-between;
     margin: 24px 0 40px 0;
     cursor: pointer;
@@ -128,14 +127,18 @@
         &:hover .main-content__description-hidden {
             visibility: visible;
         }
+
+        &:hover .main-content__description-price {
+            color: $active-text-color;
+        }
     }
 
     &__card {
         position: relative;
+    }
 
-        &-img {
-            display: block;
-        }
+    &__card-img {
+        display: block;
     }
 
     &__badge {
@@ -153,44 +156,44 @@
 
     &__description {
         margin: 16px;
+    }
 
-        &-price {
-            @include text-style-bold(36px, 24px, $not-active-text-color);
+    &__description-price {
+        @include text-style-bold(36px, 24px, $not-active-text-color);
 
-            margin-bottom: 8px;
-        }
+        margin-bottom: 8px;
+    }
 
-        &-title {
-            @include text-style-bold(24px, 16px);
+    &__description-title {
+        @include text-style-bold(24px, 16px);
 
-            margin: 0 0 4px 0;
-            overflow: hidden;
-            white-space: nowrap;
-            text-overflow: ellipsis;
-        }
+        margin: 0 0 4px 0;
+        overflow: hidden;
+        white-space: nowrap;
+        text-overflow: ellipsis;
+    }
 
-        &-hint {
-            @include text-style-regular(26px, 14px, $gray-text-color);
+    &__description-hint {
+        @include text-style-regular(26px, 14px, $gray-text-color);
 
-            margin-bottom: 16px;
-        }
+        margin-bottom: 16px;
+    }
 
-        &-hidden {
-            text-align: center;
-            visibility: hidden;
-            margin-bottom: 16px;
-        }
+    &__description-hidden {
+        text-align: center;
+        visibility: hidden;
+        margin-bottom: 16px;
+    }
 
-        &-btn {
-            @include border-radius(8px);
+    &__description-btn {
+        @include border-radius(8px);
 
-            min-width: 300px;
-            height: 44px;
-            border: none;
-            background: $not-active-text-color;
-            color: $white-color;
-            cursor: pointer;
-            padding: 0;
-        }
+        min-width: 300px;
+        height: 44px;
+        border: none;
+        background: $not-active-text-color;
+        color: $white-color;
+        cursor: pointer;
+        padding: 0;
     }
 }

@@ -233,7 +233,7 @@
     &__size-text {
         @include text-style-regular;
 
-        margin: 0;
+        margin-bottom: 8px;
     }
 
     &__form-size {
