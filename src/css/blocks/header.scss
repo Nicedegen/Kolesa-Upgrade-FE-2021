@@ -11,30 +11,23 @@
         margin: 4px 68px 0 0;
     }
 
-    &__scan {
+    &__search {
         box-sizing: border-box;
         margin-right: 600px;
         position: relative;
         opacity: 70%;
+    }
+}
 
-        & input {
-            box-sizing: border-box;
-            width: 308px;
-            height: 44px;
-            border-radius: 8px;
-            background-color: #f2f2f3;
-            border: none;
-            padding-left: 56px;
-        }
-
-        & button::before {
-            content: url(/src/assets/icons/loupe.svg);
-        }
-
-        &:hover,
-        &:focus {
-            opacity: 100%;
-        }
+.header-form {
+    &__search {
+        box-sizing: border-box;
+        width: 308px;
+        height: 44px;
+        border-radius: 8px;
+        background-color: #f2f2f3;
+        border: none;
+        padding-left: 56px;
     }
 
     &__btn {
@@ -46,10 +39,19 @@
         width: 24px;
         height: 24px;
     }
+
+    &__btn::before {
+        content: url(/src/assets/icons/loupe.svg);
+    }
+
+    &:hover,
+    &:focus {
+        opacity: 100%;
+    }
 }
 
 .header-items-profile {
-    & button {
+    &__btn {
         display: flex;
         text-decoration: none;
         border: none;

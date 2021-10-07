@@ -2,63 +2,53 @@
     margin-top: 16px;
 }
 
-.main-content-balls {
+.main-balls {
     list-style-type: none;
     justify-content: space-between;
-    margin: 24px 0 40px 0;
     cursor: pointer;
-}
 
-.main-content-balls-receive,
-.main-content-balls-plus,
-.main-content-balls-gift {
-    width: 330px;
-    height: 76px;
-    border-radius: 10px;
-    border: none;
-    cursor: pointer;
-    display: flex;
-    justify-content: flex-start;
-    align-items: center;
+    &__content {
+        width: 330px;
+        height: 76px;
+        border-radius: 10px;
+        margin: 24px 0 40px 0;
+        border: none;
+        cursor: pointer;
+        display: flex;
+        justify-content: flex-start;
+        align-items: center;
 
-    &:hover {
-        border: 1px solid #000080;
-        transition: border 0.5s linear;
+        &:hover {
+            border: 1px solid #000080;
+            transition: border 0.5s linear;
+        }
+
+        &--green {
+            background-color: $button-payed-green;
+        }
+
+        &--yellow {
+            background-color: $button-payed-yellow;
+        }
+
+        &--blue {
+            background-color: $button-payed-blue;
+        }
     }
-}
 
-.main-content-balls-receive {
-    background-color: #eff8eb;
-
-    &__icon-plus {
+    &__plus {
         @include balls-icons;
 
         background-image: url(/src/assets/icons/plus.png);
     }
 
-    &__text {
-        @include text-style-bold(32px, 20px);
-    }
-}
-
-.main-content-balls-plus {
-    background-color: #fffae7;
-
-    &__icon-question {
+    &__question {
         @include balls-icons;
 
         background-image: url(/src/assets/icons/question.png);
     }
 
-    &__text {
-        @include text-style-bold(32px, 20px);
-    }
-}
-
-.main-content-balls-gift {
-    background-color: #e9f2fb;
-
-    &__icon-gift {
+    &__gift {
         @include balls-icons;
 
         background-image: url(/src/assets/icons/gift.png);
@@ -70,9 +60,7 @@
 }
 
 .main-content-choise {
-    &__all,
-    &__clothes,
-    &__accessories {
+    &__all {
         @include border-radius(7px);
         @include text-style-regular($color: $not-active-text-color);
         @include main-border;
@@ -87,9 +75,7 @@
         box-shadow: 0 4px 4px rgba(0, 0, 0, 0.25);
     }
 
-    &__all:hover,
-    &__clothes:hover,
-    &__accessories:hover {
+    &__all:hover {
         @include main-border(1);
     }
 
@@ -100,14 +86,14 @@
     }
 }
 
-.main-content-items {
-    display: grid;
-    grid-template-columns: 330px 330px 330px;
-    gap: 24px;
-    position: relative;
-}
-
 .main-content {
+    &__items {
+        display: grid;
+        grid-template-columns: 330px 330px 330px;
+        gap: 24px;
+        position: relative;
+    }
+
     &__item {
         @include border-radius(8px);
 

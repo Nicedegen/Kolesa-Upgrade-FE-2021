@@ -1,15 +1,15 @@
 .footer {
     flex-shrink: 1;
+
+    &__content {
+        background-color: $main-text-color;
+        color: $white-color;
+        display: flex;
+        justify-content: space-between;
+    }
 }
 
-.footer-content {
-    background-color: $main-text-color;
-    color: $white-color;
-    display: flex;
-    justify-content: space-between;
-}
-
-.footer-content-contacts {
+.footer-contacts {
     &__copyright {
         padding: 20px 0 8px 32px;
     }
@@ -29,7 +29,7 @@
     }
 }
 
-.footer-content-ideas {
+.footer-ideas {
     display: flex;
 
     &__text {

@@ -278,17 +278,17 @@
 
     &__descr {
         margin-bottom: 44px;
+    }
 
-        &--bold {
-            @include text-style-bold;
+    &__descr-bold {
+        @include text-style-bold;
 
-            margin-bottom: 4px;
-        }
+        margin-bottom: 4px;
+    }
 
-        &--regular {
-            @include text-style-regular;
+    &__descr-regular {
+        @include text-style-regular;
 
-            margin-bottom: 24px;
-        }
+        margin-bottom: 24px;
     }
 }
