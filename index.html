@@ -22,9 +22,9 @@
           <li class="header-items__emblem"><a href="#" width="100" height="100"><img src="/src/assets/icons/Kolesa.svg"
                 alt="Ссылка с Эмблемой компании" width="222" height="36"></a></li>
           <li class="header-items__search">
-            <form class="header-form">
-              <button type="submit" class="header-form__btn"></button>
-              <input type="search" placeholder="Поиск" title="Введите наименование товара" class="header-form__search">
+            <form class="search-form">
+              <button type="submit" class="search-form__btn"></button>
+              <input type="search" placeholder="Поиск" title="Введите наименование товара" class="search-form__input">
             </form>
           </li>
           <li class="header-items-profile">
@@ -112,7 +112,7 @@
                       Размеры S/M/L
                     </span>
                   </div>
-                  <div class="main-content__description-hidden" id="one">
+                  <div class="main-content__description-hidden open-modal">
                     <button class="main-content__description-btn" type="button">
                       Заказать
                     </button>
@@ -424,7 +424,7 @@
     <!-------------- SECTION FOOTER END  -------------->
     <!-------------- SECTION MOD START  -------------->
 
-    <div id="mod" class="modal modal-indent">
+    <div class="modal modal-indent mod">
       <div class="modal-content modal-content-position">
         <button class="modal-content__close"></button>
         <div class="modal-content__main">
