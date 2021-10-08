@@ -1,0 +1,54 @@
+.content-indent {
+    margin: 24px 0 68px 32px;
+}
+
+.nav-indent {
+    margin: 8px 128px 0 0;
+}
+
+.content {
+    &__inner {
+        display: flex;
+    }
+
+    &__inner-nav {
+        min-width: 156px;
+        box-sizing: padding-box;
+    }
+}
+
+.content-nav-menu {
+    list-style-type: none;
+    white-space: nowrap;
+
+    &__item {
+        margin-bottom: 25px;
+        position: relative;
+
+        &--active::before {
+            content: url(/src/assets/icons/Rectangle.png);
+            position: absolute;
+            top: -5px;
+            left: -10px;
+        }
+
+        &--active .content-nav-menu__link {
+            font-weight: 600;
+        }
+    }
+
+    &__link {
+        text-decoration: none;
+
+        @include text-style-regular($size: 16px);
+
+        &:active,
+        &:hover {
+            font-weight: 600;
+        }
+    }
+
+    &__span {
+        font-weight: 600;
+    }
+}
