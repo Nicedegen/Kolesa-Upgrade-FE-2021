@@ -8,7 +8,7 @@
 
 .info-indent {
     padding-top: 64px;
-    max-width: 573px;
+    min-width: 573px;
 }
 
 .modal-content-position {
@@ -84,7 +84,9 @@
             cursor: pointer;
         }
     }
+}
 
+.modal-solution {
     &__main {
         display: flex;
     }
@@ -111,6 +113,7 @@
 
         margin-bottom: 8px;
         white-space: nowrap;
+        max-width: 392px;
 
         &--how-balls {
             @include text-style-bold(32px, 20px);
