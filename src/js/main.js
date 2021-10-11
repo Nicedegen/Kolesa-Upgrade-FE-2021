@@ -77,88 +77,112 @@ const clothes = [
         isDescr:     true,
     },
     {
-        price:   1000,
-        img:     '/src/assets/img/shirt-main.png',
-        id:      8,
-        title:   'Футболка "Сдохни или умри"',
-        isNew:   true,
-        isDescr: true,
+        price:       1000,
+        img:         '/src/assets/img/shirt-main.png',
+        id:          8,
+        title:       'Футболка "Сдохни или умри"',
+        isNew:       true,
+        description: 'Брендированная толстовка от Qazaq Republic. Материал: Хлопок 80%, Вискоза 20%',
+        isDescr:     true,
     },
     {
-        price:   2000,
-        img:     '/src/assets/img/shirt-main.png',
-        id:      9,
-        title:   'Футболка "Сделай дз за день или сдохни"',
-        isNew:   false,
-        isDescr: true,
+        price:       2000,
+        img:         '/src/assets/img/shirt-main.png',
+        id:          9,
+        title:       'Футболка "Сделай дз за день или сдохни"',
+        isNew:       false,
+        description: 'Брендированная толстовка от Qazaq Republic. Материал: Хлопок 80%, Вискоза 20%',
+        isDescr:     true,
     },
     {
-        price:   3000,
-        img:     '/src/assets/img/shirt-main.png',
-        id:      10,
-        title:   'Футболка "Эволюция, труд, май"',
-        isNew:   false,
-        isDescr: true,
+        price:       3000,
+        img:         '/src/assets/img/shirt-main.png',
+        id:          10,
+        title:       'Футболка "Эволюция, труд, май"',
+        isNew:       false,
+        description: 'Брендированная толстовка от Qazaq Republic. Материал: Хлопок 80%, Вискоза 20%',
+        isDescr:     true,
     },
     {
-        price:   4000,
-        img:     '/src/assets/img/shirt-main.png',
-        id:      11,
-        title:   'Футболка "Здесь могла быть ваша реклама"',
-        isNew:   false,
-        isDescr: true,
+        price:       4000,
+        img:         '/src/assets/img/shirt-main.png',
+        id:          11,
+        title:       'Футболка "Здесь могла быть ваша реклама"',
+        isNew:       false,
+        description: 'Брендированная толстовка от Qazaq Republic. Материал: Хлопок 80%, Вискоза 20%',
+        isDescr:     true,
     },
     {
-        price:   5000,
-        img:     '/src/assets/img/shirt-main.png',
-        id:      12,
-        title:   'Футболка "Любовь, код и котики"',
-        isNew:   false,
-        isDescr: true,
+        price:       5000,
+        img:         '/src/assets/img/shirt-main.png',
+        id:          12,
+        title:       'Футболка "Любовь, код и котики"',
+        isNew:       false,
+        description: 'Брендированная толстовка от Qazaq Republic. Материал: Хлопок 80%, Вискоза 20%',
+        isDescr:     true,
     },
     {
-        price:   6000,
-        img:     '/src/assets/img/girl-shirt.jpg',
-        id:      13,
-        title:   'Футболка "Эволюционируй или сдохни"',
-        isNew:   false,
-        isDescr: true,
+        price:       6000,
+        img:         '/src/assets/img/girl-shirt.jpg',
+        id:          13,
+        title:       'Футболка "Эволюционируй или сдохни"',
+        isNew:       false,
+        description: 'Брендированная толстовка от Qazaq Republic. Материал: Хлопок 80%, Вискоза 20%',
+        isDescr:     true,
     },
     {
-        price:   7000,
-        img:     '/src/assets/img/girl-shirt.jpg',
-        id:      14,
-        title:   'Футболка "Моя бабушка верстает лучше чем я"',
-        isNew:   false,
-        isDescr: true,
+        price:       7000,
+        img:         '/src/assets/img/girl-shirt.jpg',
+        id:          14,
+        title:       'Футболка "Моя бабушка верстает лучше чем я"',
+        isNew:       false,
+        description: 'Брендированная толстовка от Qazaq Republic. Материал: Хлопок 80%, Вискоза 20%',
+        isDescr:     true,
     },
     {
-        price:   8000,
-        img:     '/src/assets/img/girl-shirt.jpg',
-        id:      15,
-        title:   'Футболка "я сделан из NaNNaN"',
-        isNew:   false,
-        isDescr: true,
+        price:       8000,
+        img:         '/src/assets/img/girl-shirt.jpg',
+        id:          15,
+        title:       'Футболка "я сделан из NaNNaN"',
+        isNew:       false,
+        description: 'Брендированная толстовка от Qazaq Republic. Материал: Хлопок 80%, Вискоза 20%',
+        isDescr:     true,
     },
     {
-        price:   9000,
-        img:     '/src/assets/img/girl-shirt.jpg',
-        id:      16,
-        title:   'Футболка "What is love?"',
-        isNew:   false,
-        isDescr: true,
+        price:       9000,
+        img:         '/src/assets/img/girl-shirt.jpg',
+        id:          16,
+        title:       'Футболка "What is love?"',
+        isNew:       false,
+        description: 'Брендированная толстовка от Qazaq Republic. Материал: Хлопок 80%, Вискоза 20%',
+        isDescr:     true,
     },
     {
-        price:   10000,
-        img:     '/src/assets/img/girl-shirt.jpg',
-        id:      17,
-        title:   'Футболка "А у меня есть ТриКошки"',
-        isNew:   false,
-        isDescr: true,
+        price:       10000,
+        img:         '/src/assets/img/girl-shirt.jpg',
+        id:          17,
+        title:       'Футболка "А у меня есть ТриКошки"',
+        isNew:       false,
+        description: 'Брендированная толстовка от Qazaq Republic. Материал: Хлопок 80%, Вискоза 20%',
+        isDescr:     true,
     },
 ];
 
 const concatMass = accessories.concat(clothes);
+
+function sortMass(value) {
+    value.sort((a, b) => {
+        if (a.isNew > b.isNew) {
+            return -1;
+        }
+
+        if (a.isNew < b.isNew) {
+            return 1;
+        }
+
+        return 0;
+    });
+}
 
 const addCard = (img, price, title, isNew, id) => `<div class="main-block">
 <section class="main-block__item">
@@ -255,18 +279,14 @@ const addModal = (img, price, title, description, isDescr) => `
         </form>
         </section>
         <section class="modal-main-info__descr">
-        <p class="modal-main-info__descr-bold">
-            Детали:
-        </p>
-        <p class="modal-main-info__descr-regular">
+            <p class="modal-main-info__descr-bold">
+                Детали:
+            </p>
+            <p class="modal-main-info__descr-regular">
             ${description}
-        </p>
-        <p class="modal-main-info__descr-bold">
-            ${isDescr ? 'Как выбрать размер:' : ''}
-        </p>
-        <p class="modal-main-info__descr-regular">
-            ${isDescr ? 'Написать дяде Рику для уточнения.' : ''}
-        </p>
+            </p>
+            ${isDescr ? '' : ' <p class="modal-main-info__descr-bold">Как выбрать размер: </p>'}
+            ${isDescr ? '' : '<p class="modal-main-info__descr-regular">Написать дяде Рику для уточнения.</p>'}
         </section>
     </div>`;
 
@@ -282,10 +302,59 @@ function cardChange(value) {
 }
 
 cardChange(concatMass);
+// sortMass(concatMass);
 
 function clearZone() {
     document.querySelector('.js__catalog').innerHTML = '';
 }
+
+const funcModal = (img, price, title, description) => {
+    const modalHtml = addModal(img, price, title, description);
+
+    document.querySelector('.js__modal').innerHTML = modalHtml;
+};
+
+const modal = document.querySelector('.mod');
+
+const changeMass = document.querySelector('.choise-active');
+
+const defaultMass = concatMass;
+
+function itemRedef() {
+    const item = document.querySelectorAll('.open-modal');
+
+    item.forEach((btn) => {
+        btn.addEventListener('click', () => {
+            modal.style.display = 'block';
+            const massId = defaultMass[btn.id];
+
+            funcModal(massId.img, massId.price, massId.title, massId.description);
+        });
+    });
+}
+
+if (changeMass.dataset.key === 'all') {
+    // defaultMass = concatMass;
+    itemRedef(concatMass);
+} else if (changeMass.dataset.key === 'clothes') {
+    // defaultMass = clothes;
+    itemRedef(clothes);
+} else if (changeMass.dataset.key === 'accessories') {
+    // defaultMass = accessories;
+    itemRedef(accessories);
+}
+
+window.onclick = function (event) {
+    if (event.target === modal) {
+        modal.style.display = 'none';
+    }
+};
+
+const close = document.querySelector('.modal-content__close');
+
+close.onclick = function () {
+    modal.style.display = 'none';
+};
 
 document.querySelectorAll('.js__choise-btn').forEach((button) => {
     button.addEventListener('click', (event) => {
@@ -300,59 +369,22 @@ document.querySelectorAll('.js__choise-btn').forEach((button) => {
 
         if (category === 'all') {
             clearZone();
+            // sortMass(concatMass);
             cardChange(concatMass);
             btnChoise.classList.add('choise-active');
+            itemRedef();
         } else if (category === 'clothes') {
             clearZone();
+            sortMass(clothes);
             cardChange(clothes);
             btnChoise.classList.add('choise-active');
+            itemRedef();
         } else if (category === 'accessories') {
             clearZone();
+            sortMass(accessories);
             cardChange(accessories);
             btnChoise.classList.add('choise-active');
+            itemRedef();
         }
     });
 });
-
-const funcModal = (img, price, title, description) => {
-    const modalHtml = addModal(img, price, title, description);
-
-    document.querySelector('.js__modal').innerHTML = modalHtml;
-};
-
-const item = document.querySelectorAll('.open-modal');
-
-const modal = document.querySelector('.mod');
-
-const changeMass = document.querySelector('.choise-active');
-
-let defaultMass = concatMass;
-
-if (changeMass.dataset.key === 'all') {
-    defaultMass = concatMass;
-} else if (changeMass.dataset.key === 'clothes') {
-    defaultMass = clothes;
-} else if (changeMass.dataset.key === 'accessories') {
-    defaultMass = accessories;
-}
-
-item.forEach((btn) => {
-    btn.addEventListener('click', () => {
-        modal.style.display = 'block';
-        const massId = defaultMass[btn.id];
-
-        funcModal(massId.img, massId.price, massId.title, massId.description);
-    });
-});
-
-window.onclick = function (event) {
-    if (event.target === modal) {
-        modal.style.display = 'none';
-    }
-};
-
-const close = document.querySelector('.modal-content__close');
-
-close.onclick = function () {
-    modal.style.display = 'none';
-};
