@@ -59,7 +59,7 @@ const accessories = [
         price:       600,
         img:         '/src/assets/img/bottle.jpg',
         id:          6,
-        title:       'Бутылка первого президента',
+        title:       'Бутылка креативная',
         isNew:       false,
         description: 'Бутылка для воды с трубочкой',
         isDescr:     false,
