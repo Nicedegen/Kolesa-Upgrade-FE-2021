@@ -8,7 +8,7 @@
 
 .info-indent {
     padding-top: 64px;
-    max-width: 573px;
+    min-width: 573px;
 }
 
 .modal-content-position {
@@ -21,6 +21,7 @@
     list-style-type: none;
     height: 50px;
     flex-wrap: wrap;
+    margin-top: 16px;
 }
 
 .card-active {
@@ -65,6 +66,7 @@
     border: 1px solid #888;
     border-radius: 16px;
     max-width: 1040px;
+    min-height: 508px;
 
     &__close {
         border: none;
@@ -84,7 +86,9 @@
             cursor: pointer;
         }
     }
+}
 
+.modal-solution {
     &__main {
         display: flex;
     }
@@ -101,6 +105,7 @@
         &--little {
             display: block;
             margin-right: 8px;
+            cursor: pointer;
         }
     }
 }
@@ -111,6 +116,7 @@
 
         margin-bottom: 8px;
         white-space: nowrap;
+        max-width: 392px;
 
         &--how-balls {
             @include text-style-bold(32px, 20px);
