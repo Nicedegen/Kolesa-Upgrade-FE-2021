@@ -132,10 +132,8 @@ function cardChange(value) {
     const catalogSelector = document.querySelector('.js__catalog');
 
     value.forEach((card) => {
-        const {
-            img, price, title, isNew, id, label, volume, isClothes,
-        } = card;
-        const cardHtml = addCard(img, price, title, isNew, id, label, volume, isClothes);
+        const cardHtml = addCard(card.img, card.price, card.title, card.isNew,
+            card.id, card.label, card.volume, card.isClothes);
 
         catalogSelector.innerHTML += cardHtml;
     });
