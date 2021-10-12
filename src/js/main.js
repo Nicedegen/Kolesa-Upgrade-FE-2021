@@ -1,302 +1,22 @@
 import '../css/style.scss';
+import accessories from './obj/accessories';
+import clothes from './obj/clothes';
 
-const accessories = [
-    {
-        img:         '/src/assets/img/bottle-modal.png',
-        imgSml:      '/src/assets/img/bottle-modal.png',
-        price:       50,
-        title:       'Бутылка для воды',
-        id:          0,
-        isNew:       true,
-        description: 'Бутылка для воды с трубочкой',
-        isDescr:     false,
-        size:        'Объем 0.7л',
-        sizeModal:   'Объем:',
-        volume:      '0,7л',
-        isColor:     false,
-    },
-    {
-        price:       100,
-        img:         '/src/assets/img/bottle-modal.png',
-        imgSml:      '/src/assets/img/bottle-modal.png',
-        id:          1,
-        title:       'Бутылка без воды',
-        isNew:       true,
-        description: 'Бутылка для воды с трубочкой',
-        isDescr:     false,
-        size:        'Объем 0.7л',
-        sizeModal:   'Объем:',
-        volume:      '0,7л',
-        isColor:     false,
-    },
-    {
-        price:       200,
-        img:         '/src/assets/img/bottle-modal.png',
-        imgSml:      '/src/assets/img/bottle-modal.png',
-        id:          2,
-        title:       'Вода без бутылки',
-        isNew:       false,
-        description: 'Бутылка для воды с трубочкой',
-        isDescr:     false,
-        size:        'Объем 0.7л',
-        sizeModal:   'Объем:',
-        volume:      '0,7л',
-        isColor:     false,
-    },
-    {
-        price:       300,
-        img:         '/src/assets/img/bottle.jpg',
-        imgSml:      '/src/assets/img/bottle.jpg',
-        id:          3,
-        title:       'Бутылка обыкновеникус',
-        isNew:       false,
-        description: 'Бутылка для воды с трубочкой',
-        isDescr:     false,
-        size:        'Объем 0.7л',
-        sizeModal:   'Объем:',
-        volume:      '0,7л',
-        isColor:     false,
-    },
-    {
-        price:       400,
-        img:         '/src/assets/img/bottle.jpg',
-        imgSml:      '/src/assets/img/bottle.jpg',
-        id:          4,
-        title:       'Бутылка "Creative: none"',
-        isNew:       false,
-        description: 'Бутылка для воды с трубочкой',
-        isDescr:     false,
-        size:        'Объем 0.7л',
-        sizeModal:   'Объем:',
-        volume:      '0,7л',
-        isColor:     false,
-    },
-    {
-        price:       500,
-        img:         '/src/assets/img/bottle.jpg',
-        imgSml:      '/src/assets/img/bottle.jpg',
-        id:          5,
-        title:       'Бутылка с автографом Жванецкого',
-        isNew:       false,
-        description: 'Бутылка для воды с трубочкой',
-        isDescr:     false,
-        size:        'Объем 0.7л',
-        sizeModal:   'Объем:',
-        volume:      '0,7л',
-        isColor:     false,
-    },
-    {
-        price:       600,
-        img:         '/src/assets/img/bottle.jpg',
-        imgSml:      '/src/assets/img/bottle.jpg',
-        id:          6,
-        title:       'Бутылка с сычуаньским соусом',
-        isNew:       false,
-        description: 'Бутылка для воды с трубочкой',
-        isDescr:     false,
-        size:        'Объем 0.7л',
-        sizeModal:   'Объем:',
-        volume:      '0,7л',
-        isColor:     false,
-    },
-];
+const allProducts = accessories.concat(clothes);
 
-const clothes = [
-    {
-        price:       800,
-        img:         '/src/assets/img/shirt-main.png',
-        imgSml:      '/src/assets/icons/t-shirt-sml.png',
-        imgSml2:     '/src/assets/icons/image-girl.png',
-        imgSml3:     '/src/assets/icons/image-man.png',
-        id:          7,
-        title:       'Футболка "Эволюционируй или сдохни"',
-        isNew:       true,
-        description: 'Брендированная толстовка от Qazaq Republic. Материал: Хлопок 80%, Вискоза 20%',
-        isDescr:     true,
-        size:        'Размеры S/M/L',
-        sizeModal:   'Размер:',
-        volume:      'S',
-        isColor:     true,
-    },
-    {
-        price:       1000,
-        img:         '/src/assets/img/shirt-main.png',
-        imgSml:      '/src/assets/icons/t-shirt-sml.png',
-        imgSml2:     '/src/assets/icons/image-girl.png',
-        imgSml3:     '/src/assets/icons/image-man.png',
-        id:          8,
-        title:       'Футболка "Сдохни или умри"',
-        isNew:       true,
-        description: 'Брендированная толстовка от Qazaq Republic. Материал: Хлопок 80%, Вискоза 20%',
-        isDescr:     true,
-        size:        'Размеры S/M/L',
-        sizeModal:   'Размер:',
-        volume:      'S',
-        isColor:     true,
-    },
-    {
-        price:       2000,
-        img:         '/src/assets/img/shirt-main.png',
-        imgSml:      '/src/assets/icons/t-shirt-sml.png',
-        imgSml2:     '/src/assets/icons/image-girl.png',
-        imgSml3:     '/src/assets/icons/image-man.png',
-        id:          9,
-        title:       'Футболка "Сделай дз за день или сдохни"',
-        isNew:       false,
-        description: 'Брендированная толстовка от Qazaq Republic. Материал: Хлопок 80%, Вискоза 20%',
-        isDescr:     true,
-        size:        'Размеры S/M/L',
-        sizeModal:   'Размер:',
-        volume:      'S',
-        isColor:     true,
-    },
-    {
-        price:       3000,
-        img:         '/src/assets/img/shirt-main.png',
-        imgSml:      '/src/assets/icons/t-shirt-sml.png',
-        imgSml2:     '/src/assets/icons/image-girl.png',
-        imgSml3:     '/src/assets/icons/image-man.png',
-        id:          10,
-        title:       'Футболка "Эволюция, труд, май"',
-        isNew:       false,
-        description: 'Брендированная толстовка от Qazaq Republic. Материал: Хлопок 80%, Вискоза 20%',
-        isDescr:     true,
-        size:        'Размеры S/M/L',
-        sizeModal:   'Размер:',
-        volume:      'S',
-        isColor:     true,
-    },
-    {
-        price:       4000,
-        img:         '/src/assets/img/shirt-main.png',
-        imgSml:      '/src/assets/icons/t-shirt-sml.png',
-        imgSml2:     '/src/assets/icons/image-girl.png',
-        imgSml3:     '/src/assets/icons/image-man.png',
-        id:          11,
-        title:       'Футболка "Здесь могла быть ваша реклама"',
-        isNew:       false,
-        description: 'Брендированная толстовка от Qazaq Republic. Материал: Хлопок 80%, Вискоза 20%',
-        isDescr:     true,
-        size:        'Размеры S/M/L',
-        sizeModal:   'Размер:',
-        volume:      'S',
-        isColor:     true,
-    },
-    {
-        price:       5000,
-        img:         '/src/assets/img/shirt-main.png',
-        imgSml:      '/src/assets/icons/t-shirt-sml.png',
-        imgSml2:     '/src/assets/icons/image-girl.png',
-        imgSml3:     '/src/assets/icons/image-man.png',
-        id:          12,
-        title:       'Футболка "Любовь, код и котики"',
-        isNew:       false,
-        description: 'Брендированная толстовка от Qazaq Republic. Материал: Хлопок 80%, Вискоза 20%',
-        isDescr:     true,
-        size:        'Размеры S/M/L',
-        sizeModal:   'Размер:',
-        volume:      'S',
-        isColor:     true,
-    },
-    {
-        price:       6000,
-        img:         '/src/assets/img/girl-shirt.jpg',
-        imgSml:      '/src/assets/icons/t-shirt-sml.png',
-        imgSml2:     '/src/assets/icons/image-girl.png',
-        imgSml3:     '/src/assets/icons/image-man.png',
-        id:          13,
-        title:       'Футболка "Эволюционируй или сдохни"',
-        isNew:       false,
-        description: 'Брендированная толстовка от Qazaq Republic. Материал: Хлопок 80%, Вискоза 20%',
-        isDescr:     true,
-        size:        'Размеры S/M/L',
-        sizeModal:   'Размер:',
-        volume:      'S',
-        isColor:     true,
-    },
-    {
-        price:       7000,
-        img:         '/src/assets/img/girl-shirt.jpg',
-        imgSml:      '/src/assets/icons/t-shirt-sml.png',
-        imgSml2:     '/src/assets/icons/image-girl.png',
-        imgSml3:     '/src/assets/icons/image-man.png',
-        id:          14,
-        title:       'Футболка "Моя бабушка верстает лучше чем я"',
-        isNew:       false,
-        description: 'Брендированная толстовка от Qazaq Republic. Материал: Хлопок 80%, Вискоза 20%',
-        isDescr:     true,
-        size:        'Размеры S/M/L',
-        sizeModal:   'Размер:',
-        volume:      'S',
-        isColor:     true,
-    },
-    {
-        price:       8000,
-        img:         '/src/assets/img/girl-shirt.jpg',
-        imgSml:      '/src/assets/icons/t-shirt-sml.png',
-        imgSml2:     '/src/assets/icons/image-girl.png',
-        imgSml3:     '/src/assets/icons/image-man.png',
-        id:          15,
-        title:       'Футболка "я сделан из NaNNaN"',
-        isNew:       false,
-        description: 'Брендированная толстовка от Qazaq Republic. Материал: Хлопок 80%, Вискоза 20%',
-        isDescr:     true,
-        size:        'Размеры S/M/L',
-        sizeModal:   'Размер:',
-        volume:      'S',
-        isColor:     true,
-    },
-    {
-        price:       9000,
-        img:         '/src/assets/img/girl-shirt.jpg',
-        imgSml:      '/src/assets/icons/t-shirt-sml.png',
-        imgSml2:     '/src/assets/icons/image-girl.png',
-        imgSml3:     '/src/assets/icons/image-man.png',
-        id:          16,
-        title:       'Футболка "What is love?"',
-        isNew:       false,
-        description: 'Брендированная толстовка от Qazaq Republic. Материал: Хлопок 80%, Вискоза 20%',
-        isDescr:     true,
-        size:        'Размеры S/M/L',
-        sizeModal:   'Размер:',
-        volume:      'S',
-        isColor:     true,
-    },
-    {
-        price:       10000,
-        img:         '/src/assets/img/girl-shirt.jpg',
-        imgSml:      '/src/assets/icons/t-shirt-sml.png',
-        imgSml2:     '/src/assets/icons/image-girl.png',
-        imgSml3:     '/src/assets/icons/image-man.png',
-        id:          17,
-        title:       'Футболка "А у меня есть ТриКошки"',
-        isNew:       false,
-        description: 'Брендированная толстовка от Qazaq Republic. Материал: Хлопок 80%, Вискоза 20%',
-        isDescr:     true,
-        size:        'Размеры S/M/L',
-        sizeModal:   'Размер:',
-        volume:      'S',
-        isColor:     true,
-    },
-];
+function sortByNew(a, b) {
+    if (a.isNew > b.isNew) {
+        return -1;
+    }
 
-const concatMass = accessories.concat(clothes);
+    if (a.isNew < b.isNew) {
+        return 1;
+    }
 
-function sortMass(value) {
-    value.sort((a, b) => {
-        if (a.isNew > b.isNew) {
-            return -1;
-        }
-
-        if (a.isNew < b.isNew) {
-            return 1;
-        }
-
-        return 0;
-    });
+    return 0;
 }
 
-const addCard = (img, price, title, isNew, id, size) => `<div class="main-block">
+const addCard = (img, price, title, isNew, id, label, volume, isClothes) => `<div class="main-block">
 <section class="main-block__item">
   <div class="main-card">
     <img src="${img}" alt="Картинка футболки" class="main-card__img"
@@ -311,7 +31,7 @@ const addCard = (img, price, title, isNew, id, size) => `<div class="main-block"
     ${title}
     </h3>
     <span class="main-card__description-hint">
-    ${size}
+    ${label} ${isClothes ? `${volume}/M/L` : `${volume}`}
     </span>
   </div>
   <div class="main-card__description-hidden open-modal" id="${id}">
@@ -322,14 +42,14 @@ const addCard = (img, price, title, isNew, id, size) => `<div class="main-block"
 </section>
 </div>`;
 
-const addModal = (img, price, title, description, isDescr, isColor, sizeModal, volume, imgSml) => `
+const addModal = (img, price, title, description, isDescr, volume, imgSml, label, isClothes) => `
 <div class="modal-solution__main">
   <div class="modal-solution__card">
     <div class="modal-solution__card--big"><img src="${img}"
-        alt="Футболка с надписью 'Эволюционируй или сдохни'" width="330" height="330"></div>
+        alt="${title}" width="330" height="330"></div>
     <div>
     <ul class="cards-little">
-    ${isColor ? '<li class="modal-solution__card--little js__img" data-key="imgSml-1">'
+    ${isClothes ? '<li class="modal-solution__card--little js__img" data-key="imgSml-1">'
     + '<img src="/src/assets/icons/image-girl.png"'
             + 'alt="иконка товара" width="50" height="50">'
         + '</li>'
@@ -337,7 +57,7 @@ const addModal = (img, price, title, description, isDescr, isColor, sizeModal, v
         <li class="modal-solution__card--little card-active js__img" data-key="imgSml-2"><img src="${imgSml}"
             alt="иконка товара" width="50" height="50">
         </li>
-        ${isColor ? '<li class="modal-solution__card--little js__img" data-key="imgSml-3">'
+        ${isClothes ? '<li class="modal-solution__card--little js__img" data-key="imgSml-3">'
         + '<img src="/src/assets/icons/image-man.png"'
             + 'alt="иконка товара" width="50" height="50">'
         + '</li>'
@@ -359,7 +79,7 @@ const addModal = (img, price, title, description, isDescr, isColor, sizeModal, v
             </div>
         </div>
         </section>
-        ${isColor ? '<section class="modal-main-info__colors">'
+        ${isClothes ? '<section class="modal-main-info__colors">'
         + '<p class="modal-main-info__colors-text">Цвета:</p>'
         + '<form action="" class="modal-main-info__choise-color">'
             + '<div class="modal-main-info__radio">'
@@ -378,14 +98,14 @@ const addModal = (img, price, title, description, isDescr, isColor, sizeModal, v
         + '</section>'
             : ''}
         <section class="modal-main-info__size">
-        <p class="modal-main-info__size-text">${sizeModal}</p>
+        <p class="modal-main-info__size-text">${label}</p>
         <form action="#" class="modal-main-info__form-size">
             <div class="modal-main-info__radio-size">
             <input type="radio" name="size" id="S" value="S" class="modal-main-info__input-size active-size"
                 checked>
             <label for="S" class="modal-main-info__label-size">${volume}</label>
             </div>
-            ${isColor ? '<div class="modal-main-info__radio-size">'
+            ${isClothes ? '<div class="modal-main-info__radio-size">'
             + '<input type="radio" name="size" id="M" value="M" class="modal-main-info__input-size">'
             + '<label for="M" class="modal-main-info__label-size">M</label>'
             + '</div>'
@@ -405,66 +125,65 @@ const addModal = (img, price, title, description, isDescr, isColor, sizeModal, v
             </p>
             ${isDescr ? '<p class="modal-main-info__descr-bold"> Как выбрать размер:</p>'
             + '<p class="modal-main-info__descr-regular">Написать дяде Рику для уточнения.</p>' : ''}
-
-
         </section>
     </div>`;
 
 function cardChange(value) {
+    const catalogSelector = document.querySelector('.js__catalog');
+
     value.forEach((card) => {
         const {
-            price, img, title, isNew, id, size,
+            img, price, title, isNew, id, label, volume, isClothes,
         } = card;
-        const cardHtml = addCard(img, price, title, isNew, id, size);
+        const cardHtml = addCard(img, price, title, isNew, id, label, volume, isClothes);
 
-        document.querySelector('.js__catalog').innerHTML += cardHtml;
+        catalogSelector.innerHTML += cardHtml;
     });
 }
 
-sortMass(concatMass);
-cardChange(concatMass);
+allProducts.sort(sortByNew);
+cardChange(allProducts);
 
 function clearZone() {
     document.querySelector('.js__catalog').innerHTML = '';
 }
 
-const funcModal = (img, price, title, description, isDescr, isColor, sizeModal, volume, imgSml) => {
-    const modalHtml = addModal(img, price, title, description, isDescr, isColor, sizeModal, volume, imgSml);
+const addValuesModal = (variable) => {
+    const modalSelector = document.querySelector('.js__modal');
+    const modalHtml = addModal(variable.img, variable.price, variable.title, variable.description, variable.isDescr,
+        variable.volume, variable.imgSml, variable.label, variable.isClothes);
 
-    document.querySelector('.js__modal').innerHTML = modalHtml;
+    modalSelector.innerHTML = modalHtml;
 };
 
 const modal = document.querySelector('.mod');
 
 const changeMass = document.querySelector('.choise-active');
 
-let defaultMass = concatMass;
+let defaultMass = allProducts;
 
-function itemRedef() {
+function itemRedef(mass) {
     const item = document.querySelectorAll('.open-modal');
+
+    defaultMass = mass;
 
     item.forEach((btn) => {
         btn.addEventListener('click', () => {
             modal.style.display = 'block';
             const btnId = +btn.id;
 
-            const massIndex = defaultMass.find(({ id }) => id === btnId);
+            const massValue = defaultMass.find(({ id }) => id === btnId);
 
-            funcModal(massIndex.img, massIndex.price, massIndex.title,
-                massIndex.description, massIndex.isDescr,
-                massIndex.isColor, massIndex.sizeModal, massIndex.volume, massIndex.imgSml);
+            addValuesModal(massValue);
         });
     });
 }
 
 if (changeMass.dataset.key === 'all') {
-    defaultMass = concatMass;
-    itemRedef(concatMass);
+    itemRedef(allProducts);
 } else if (changeMass.dataset.key === 'clothes') {
-    defaultMass = clothes;
     itemRedef(clothes);
 } else if (changeMass.dataset.key === 'accessories') {
-    defaultMass = accessories;
     itemRedef(accessories);
 }
 
@@ -487,28 +206,24 @@ document.querySelectorAll('.js__choise-btn').forEach((button) => {
 
         const activeBtn = document.querySelector('.choise-active');
 
+        function changeCategory(mass) {
+            clearZone();
+            mass.sort(sortByNew);
+            cardChange(mass);
+            itemRedef(mass);
+            btnChoise.classList.add('choise-active');
+        }
+
         if (activeBtn) {
             activeBtn.classList.remove('choise-active');
         }
 
         if (category === 'all') {
-            clearZone();
-            sortMass(concatMass);
-            cardChange(concatMass);
-            itemRedef();
-            btnChoise.classList.add('choise-active');
+            changeCategory(allProducts);
         } else if (category === 'clothes') {
-            clearZone();
-            sortMass(clothes);
-            cardChange(clothes);
-            itemRedef();
-            btnChoise.classList.add('choise-active');
+            changeCategory(clothes);
         } else if (category === 'accessories') {
-            clearZone();
-            sortMass(accessories);
-            cardChange(accessories);
-            itemRedef();
-            btnChoise.classList.add('choise-active');
+            changeCategory(accessories);
         }
     });
 });
