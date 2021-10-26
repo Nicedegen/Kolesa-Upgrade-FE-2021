@@ -88,7 +88,7 @@
               <div class="main-content">
                 <div class="main-banner">
                   <img
-                    src="./assets/img/banner.png"
+                    src="../public/assets/img/banner.png"
                     alt="Главный банер акций"
                     width="100%"
                     height="340"
@@ -109,40 +109,21 @@
                   </button>
                 </div>
                 <div class="main-content-choise">
-                  <button id="0" checked
+                  <button :id="button.id" v-for="button in buttons" :key="button.id"
                     type="button"
                     class="main-content-choise__all
-                    js__choise-btn" @click="choise = 'all'; sortArray(choise)"
-                    :class="{choise_active:choise == 'all'}"
+                    js__choise-btn" @click="choise = button.id; categoryValue(choise)"
+                    :class="{choise_active:choise === button.id}"
                   >
-                    Все товары
-                  </button>
-                  <button id="1"
-                    type="button"
-                    class="main-content-choise__all js__choise-btn"
-                    @click="choise = 'clothes'; sortArray(choise)"
-                    :class="{choise_active:choise == 'clothes'}"
-                  >
-                    Одежда
-                  </button>
-                  <button
-                    id="2"
-                    type="button"
-                    class="main-content-choise__all js__choise-btn"
-                    @click="choise = 'accessories'; sortArray(choise)"
-                    :class="{choise_active:choise == 'accessories'}"
-                  >
-                    Аксессуары
+                    {{button.name}}
                   </button>
                 </div>
               </div>
             </div>
-
             <!-----------------  SECTION MAIN CARD --------------- -->
-
             <main class="main-content-items main-indent">
               <div class="main-content__items js__catalog">
-                <div class="main-block" v-for="item in category"
+                <div class="main-block" v-for="item in products"
                   :key="item.id"
                 >
                   <section class="main-block__item">
@@ -170,7 +151,7 @@
                     <div class="main-card__description-hidden"
                       >
                       <button class="main-card__description-btn" type="button"
-                      @click="changeDisplay()">
+                      @click="showModal()">
                       Заказать
                       </button>
                     </div>
@@ -230,54 +211,111 @@
     </footer>
     <!-------------- SECTION FOOTER END  -------------->
     <!-------------- SECTION MOD START  -------------->
-
-    <div class="modal modal-indent mod v-bind:style=" { display: computedDisplay } ">
+    <div class="modal modal-indent mod"  v-if="isShowModal">
       <div class="modal-content modal-content-position">
-        <button class="modal-content__close"></button>
+        <button class="modal-content__close" @click="closeModal()"></button>
         <div class="modal-solution js__modal">
-          <div class="main-block">
-            <section class="main-block__item">
-              <div class="main-card">
-                <img src="${img}" alt="Картинка футболки" class="main-card__img"
-                  width="330" height="330">
-                  ${isNew ? '<span class="main-card__badge">new</span>' : ''}
+          <div class="modal-solution__main">
+  <div class="modal-solution__card">
+    <div class="modal-solution__card--big">
+      <img src="../public/assets/img/shirt-main.png"
+        alt="${title}" width="330" height="330"></div>
+    <div>
+    <ul class="cards-little">
+      <li class="modal-solution__card--little js__img" data-key="imgSml-1">
+     <img src="./assets/icons/image-girl.png"
+             alt="иконка товара" width="50" height="50">
+         </li>
+        <li class="modal-solution__card--little card-active js__img"
+        data-key="imgSml-2"><img src="../public/assets/img/shirt-modal.png"
+            alt="иконка товара" width="50" height="50">
+        </li>
+       <li class="modal-solution__card--little js__img" data-key="imgSml-3">
+       <img src="./assets/icons/image-man.png"
+          alt="иконка товара" width="50" height="50">
+        </li>
+        </ul>
+        </div>
+    </div>
+    <div class="modal-main-info info-indent">
+        <section class="modal-main-info info-title">
+        <div>
+            <h2 class="modal-main-info__title">Футболка "Сдохни или умри"</h2>
+            <div class="modal-main-info__title--how-balls">1000 балов</div>
+            <input type="button" value="Попросить 50 балов"
+            class="modal-main-info__title--yellow-btn">
+        </div>
+        <div class="modal-main-info__balance">
+            <div class="modal-main-info__text">
+            <h2 class="modal-main-info__text--title">Твой баланс:</h2>
+            <h3 class="modal-main-info__text--subtitle">150 Балов</h3>
+            </div>
+        </div>
+        </section>
+      <section class="modal-main-info__colors">
+        <p class="modal-main-info__colors-text">Цвета:</p>
+        <form action="" class="modal-main-info__choise-color">
+            <div class="modal-main-info__radio">
+            <input type="radio" name="colors" id="blue"
+              value="blue" class="modal-main-info__input" checked>
+            <label for="blue" class="modal-main-info__label label-1">Синий</label>
+            </div>
+            <div class="modal-main-info__radio">
+            <input type="radio" name="colors" id="biege"
+              value="biege" class="modal-main-info__input">
+            <label for="biege" class="modal-main-info__label label-2">Бежевый</label>
+            </div>
+            <div class="modal-main-info__radio">
+            <input type="radio" name="colors" id="gray" value="gray" class="modal-main-info__input">
+            <label for="gray" class="modal-main-info__label label-3">Серый</label>
+            </div>
+          </form>
+          </section>
+          <section class="modal-main-info__size">
+            <p class="modal-main-info__size-text">Размер</p>
+            <form action="#" class="modal-main-info__form-size">
+              <div class="modal-main-info__radio-size">
+              <input type="radio" name="size" id="S" value="S"
+                class="modal-main-info__input-size active-size"
+                  checked>
+              <label for="S" class="modal-main-info__label-size">S</label>
               </div>
-              <div class="main-card__description">
-                <span class="main-card__description-price">
-                  ${price} баллов
-                </span>
-                <h3 class="main-card__description-title">
-                  ${title}
-                </h3>
-                <span class="main-card__description-hint">
-                  ${label} ${isClothes ? `${volume}/M/L` : `${volume}`}
-                </span>
+            <div class="modal-main-info__radio-size">
+              <input type="radio" name="size" id="M" value="M" class="modal-main-info__input-size">
+              <label for="M" class="modal-main-info__label-size">M</label>
               </div>
-              <div class="main-card__description-hidden open-modal" id="${id}">
-                <button class="main-card__description-btn" type="button">
-                  Заказать
-                </button>
+              <div class="modal-main-info__radio-size">
+              <input type="radio" name="size" id="L" value="L" class="modal-main-info__input-size">
+              <label for="L" class="modal-main-info__label-size">L</label>
               </div>
+            </form>
+            </section>
+            <section class="modal-main-info__descr">
+              <p class="modal-main-info__descr-bold">
+                  Детали:
+              </p>
+              <p class="modal-main-info__descr-regular">
+              Брендированная толстовка от Qazaq Republic. Материал: Хлопок 80%, Вискоза 20%
+              </p>
+              <p class="modal-main-info__descr-bold"> Как выбрать размер:</p>
+              <p class="modal-main-info__descr-regular">Написать дяде Рику для уточнения.</p>
             </section>
           </div>
         </div>
       </div>
     </div>
-
     <!-------------- SECTION MOD END  -------------->
+  </div>
   </div>
 </template>
 
 <script>
-
 export default {
   name: 'App',
   data() {
     return {
       isShowModal: false,
-      choise: undefined,
-      modal: false,
-      display: 'none',
+      choise: 0,
       cards: {
         clothes: [
           {
@@ -539,38 +577,60 @@ export default {
             isClothes: false,
           },
         ],
-        all: this.clothes + this.accessories,
       },
-      category: this.all,
+      category: String,
+      buttons: [
+        {
+          name: 'Все товары',
+          id: 0,
+        },
+        {
+          name: 'Одежда',
+          id: 1,
+        },
+        {
+          name: 'Аксессуары',
+          id: 2,
+        },
+      ],
     };
   },
   components: {
   },
   computed: {
-    computedDisplay() {
-      return this.display;
+    products() {
+      if (this.category === 1) {
+        return this.cards.clothes;
+      } if (this.category === 2) {
+        return this.cards.accessories;
+      }
+      return this.allProducts();
     },
   },
   methods: {
-    concat() {
-      this.category = this.cards.accessories.concat(this.cards.clothes);
+    categoryValue(id) {
+      this.category = id;
       return this.category;
     },
-    sortArray(string) {
-      if (string === 'all') {
-        this.category = this.cards.accessories.concat(this.cards.clothes);
-      } else if (string === 'clothes') {
-        this.category = this.cards.clothes;
-      } else {
-        this.category = this.cards.accessories;
+    allProducts() {
+      const productsAll = this.cards.accessories.concat(this.cards.clothes);
+      productsAll.sort(this.sortByNew);
+      return productsAll;
+    },
+    showModal() {
+      this.isShowModal = true;
+    },
+    closeModal() {
+      this.isShowModal = false;
+    },
+    sortByNew(a, b) {
+      if (a.isNew > b.isNew) {
+        return -1;
       }
-      return this.category;
-    },
-    openModal() {
-      this.modal = true;
-    },
-    changeDisplay() {
-      this.display = 'block';
+      if (a.isNew < b.isNew) {
+        return 1;
+      }
+      return 0;
     },
   },
 };
