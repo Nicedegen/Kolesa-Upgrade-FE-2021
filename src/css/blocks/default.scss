@@ -1,0 +1,59 @@
+$main-text-color: #1c1819;
+$not-active-text-color: #2a81dd;
+$active-text-color: #f33;
+$border-color: rgba(28, 24, 25, 0.1);
+$white-color: #fff;
+$gray-text-color: #888b94;
+$label-bg-color: #d6ecfb;
+$button-payed-green: #eff8eb;
+$button-payed-yellow: #fffae7;
+$button-payed-blue: #e9f2fb;
+
+@mixin text-style-bold($height: 24px, $size: 14px, $color: $main-text-color) {
+    font-family: 'Open Sans', sans-serif;
+    font-weight: 600;
+    line-height: $height;
+    font-size: $size;
+    color: $color;
+}
+
+@mixin text-style-regular($height: 24px, $size: 14px, $color: $main-text-color) {
+    font-weight: 400;
+    line-height: $height;
+    font-size: $size;
+    color: $color;
+}
+
+@mixin border-radius($radius: 16px) {
+    border-radius: $radius;
+}
+
+@mixin image-style {
+    background-size: cover;
+    background-repeat: no-repeat;
+}
+
+@mixin balls-icons {
+    background-position: center;
+    background-repeat: no-repeat;
+    width: 48px;
+    height: 56px;
+    margin: 0 16px 0 24px;
+}
+
+@mixin main-border($transp: 0.1) {
+    border: 1px solid rgba(28, 24, 25, $transp)
+}
+
+h2,
+h3,
+h4,
+ul,
+p {
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    font-family: 'Open Sans', sans-serif;
+}
