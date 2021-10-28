@@ -17,7 +17,7 @@
             <Search></Search>
           </li>
           <li class="header-items-profile">
-            <Profile></Profile>
+            <Profile :profile="this.cards.user"></Profile>
           </li>
         </ul>
       </header>
@@ -344,6 +344,8 @@ export default {
             isClothes: false,
           },
         ],
+        user: [
+        ],
       },
       cardsData: {},
       modalData: {},
@@ -364,10 +366,16 @@ export default {
     axios.get('templates/-_RLsEGjof6i/data')
       .then((response) => {
         this.cards.clothes = response.data;
+        console.log(this.cards.clothes);
       });
     axios.get('templates/q3OPxRyEcPvP/data')
       .then((response) => {
         this.cards.accessories = response.data;
+        console.log(this.cards.accessories);
+      });
+    axios.get('templates/7ZW3y5GAuIge/data')
+      .then((response) => {
+        this.cards.user = response.data;
       });
   },
   computed: {

@@ -1,13 +1,13 @@
 <template>
   <button type="button" class="header-items-profile__btn">
-      <img src="@/assets/icons/profile-icon.png"
+      <img :src="profile.avatarUrl"
         alt="Иконка профиля"
         class="header-items-profile__icon"
         width="44" height="44">
       <span class="header-items-profile__text">
-          <span class="header-items-profile__text--name">Мортиджан</span>
+          <span class="header-items-profile__text--name">{{profile.name}}</span>
           <br>
-          <span class="header-items-profile__text--balls">300 Балов</span>
+          <span class="header-items-profile__text--balls">{{profile.score}}</span>
       </span>
   </button>
 </template>
@@ -15,6 +15,9 @@
 <script>
 export default {
   name: 'Profile',
+  props: {
+    profile: Object,
+  },
   data() {
     return {
     };

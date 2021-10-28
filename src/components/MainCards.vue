@@ -15,11 +15,11 @@
         <h3 class="main-card__description-title">
           {{data.title}}
         </h3>
-        <span class="main-card__description-hint" v-if="data.isClothes">
-          {{data.sizes}} {{data.volume}}
+        <span class="main-card__description-hint" v-if="data.sizes">
+         {{ getFormatText(data.sizes) }}
         </span>
         <span class="main-card__description-hint" v-else>
-          {{data.sizes}} {{data.volume}}
+          {{ getFormatText(data.volumes) }}
         </span>
       </div>
       <div class="main-card__description-hidden">
@@ -47,6 +47,9 @@ export default {
   methods: {
     openModal() {
       this.$emit('open');
+    },
+    getFormatText(data) {
+      return data && data.length ? `Размер ${String(data).replace(',', ', ')}` : '';
     },
   },
 };

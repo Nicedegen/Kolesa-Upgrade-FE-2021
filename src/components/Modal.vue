@@ -6,20 +6,20 @@
             <div class="modal-solution__main">
     <div class="modal-solution__card">
       <div class="modal-solution__card--big">
-        <img :src="data.img"
+        <img :src="data.mainImage"
           alt="${title}" width="330" height="330"></div>
       <div>
       <ul class="cards-little">
         <li class="modal-solution__card--little js__img" data-key="imgSml-1">
-      <img :src="data.imgSml"
+      <img :src="data.images[0]"
               alt="иконка товара" width="50" height="50">
           </li>
           <li class="modal-solution__card--little card-active js__img"
-          data-key="imgSml-2"><img :src="data.imgSml2"
+          data-key="imgSml-2"><img :src="data.images[1]"
               alt="иконка товара" width="50" height="50">
           </li>
         <li class="modal-solution__card--little js__img" data-key="imgSml-3">
-        <img :src="data.imgSml3"
+        <img :src="data.images[2]"
             alt="иконка товара" width="50" height="50">
           </li>
           </ul>
@@ -43,38 +43,21 @@
       <section class="modal-main-info__colors">
         <p class="modal-main-info__colors-text">Цвета:</p>
         <form action="" class="modal-main-info__choise-color">
-            <div class="modal-main-info__radio">
-            <input type="radio" name="colors" id="blue"
-              value="blue" class="modal-main-info__input" checked>
-            <label for="blue" class="modal-main-info__label label-1">Синий</label>
-            </div>
-            <div class="modal-main-info__radio">
-            <input type="radio" name="colors" id="biege"
-              value="biege" class="modal-main-info__input">
-            <label for="biege" class="modal-main-info__label label-2">Бежевый</label>
-            </div>
-            <div class="modal-main-info__radio">
-            <input type="radio" name="colors" id="gray" value="gray" class="modal-main-info__input">
-            <label for="gray" class="modal-main-info__label label-3">Серый</label>
+            <div class="modal-main-info__radio" v-for="color in data.colors" :key="color.id">
+            <input type="radio" name="colors" :id="color.label"
+              :value="color.label" class="modal-main-info__input" checked>
+            <label :for="color.label" class="modal-main-info__label label-1">{{color.label}}</label>
             </div>
           </form>
           </section>
           <section class="modal-main-info__size">
             <p class="modal-main-info__size-text">Размер</p>
             <form action="#" class="modal-main-info__form-size">
-              <div class="modal-main-info__radio-size">
-              <input type="radio" name="size" id="S" value="S"
+              <div class="modal-main-info__radio-size" v-for="size in data.sizes" :key="size.id">
+              <input type="radio" name="size" :id="size" :value="size"
                 class="modal-main-info__input-size active-size"
                   checked>
-              <label for="S" class="modal-main-info__label-size">S</label>
-              </div>
-            <div class="modal-main-info__radio-size">
-              <input type="radio" name="size" id="M" value="M" class="modal-main-info__input-size">
-              <label for="M" class="modal-main-info__label-size">M</label>
-              </div>
-              <div class="modal-main-info__radio-size">
-              <input type="radio" name="size" id="L" value="L" class="modal-main-info__input-size">
-              <label for="L" class="modal-main-info__label-size">L</label>
+              <label :for="size" class="modal-main-info__label-size">{{size}}</label>
               </div>
             </form>
             </section>
