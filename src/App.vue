@@ -14,31 +14,10 @@
             /></a>
           </li>
           <li class="header-items__search">
-            <form class="search-form">
-              <button type="submit" class="search-form__btn"></button>
-              <input
-                type="search"
-                placeholder="Поиск"
-                title="Введите наименование товара"
-                class="search-form__input"
-              />
-            </form>
+            <Search></Search>
           </li>
           <li class="header-items-profile">
-            <button type="button" class="header-items-profile__btn">
-              <img
-                src="./assets/icons/profile-icon.png"
-                alt="Иконка профиля"
-                class="header-items-profile__icon"
-                width="44"
-                height="44"
-              />
-              <span class="header-items-profile__text">
-                <span class="header-items-profile__text--name">Мортиджан</span>
-                <br />
-                <span class="header-items-profile__text--balls">300 Балов</span>
-              </span>
-            </button>
+            <Profile :profile="this.cards.user"></Profile>
           </li>
         </ul>
       </header>
@@ -46,41 +25,7 @@
       <!-------------- SECTION NAV START  -------------->
       <section class="content">
         <div class="content__inner content-indent">
-          <div class="content__inner-nav nav-indent">
-            <nav>
-              <ul class="content-nav-menu">
-                <li class="content-nav-menu__item">
-                  <a href="#" class="content-nav-menu__link">Оргсхема</a>
-                </li>
-                <li class="content-nav-menu__item">
-                  <a href="#" class="content-nav-menu__link"
-                    >Kolesa <span class="content-nav-menu__span">Team</span></a
-                  >
-                </li>
-                <li class="content-nav-menu__item content-nav-menu__item--active">
-                  <a href="#" class="content-nav-menu__link">Kolesa shop</a>
-                </li>
-                <li class="content-nav-menu__item">
-                  <a href="#" class="content-nav-menu__link">Картина компании</a>
-                </li>
-                <li class="content-nav-menu__item">
-                  <a href="#" class="content-nav-menu__link">Новости</a>
-                </li>
-                <li class="content-nav-menu__item">
-                  <a href="#" class="content-nav-menu__link">Education</a>
-                </li>
-                <li class="content-nav-menu__item">
-                  <a href="#" class="content-nav-menu__link">Guidelines</a>
-                </li>
-                <li class="content-nav-menu__item">
-                  <a href="#" class="content-nav-menu__link">Библиотека</a>
-                </li>
-                <li class="content-nav-menu__item">
-                  <a href="#" class="content-nav-menu__link">FAQ</a>
-                </li>
-              </ul>
-            </nav>
-          </div>
+        <Nav></Nav>
           <!-------------- SECTION NAV END  -------------->
           <!-------------- SECTION MAIN START  -------------->
           <section class="main">
@@ -94,69 +39,18 @@
                     height="340"
                   />
                 </div>
-                <div class="main-balls modal-solution__main">
-                  <button type="button" class="main-balls__content main-balls__content--green">
-                    <span class="main-balls__plus"></span>
-                    <span class="main-balls__text">Получить балы</span>
-                  </button>
-                  <button type="button" class="main-balls__content main-balls__content--yellow">
-                    <span class="main-balls__question"></span>
-                    <span class="main-balls__text">Как получить балы</span>
-                  </button>
-                  <button type="button" class="main-balls__content main-balls__content--blue">
-                    <span class="main-balls__gift"></span>
-                    <span class="main-balls__text">Подарить балы</span>
-                  </button>
-                </div>
+                <Balls></Balls>
                 <div class="main-content-choise">
-                  <button :id="button.id" v-for="button in buttons" :key="button.id"
-                    type="button"
-                    class="main-content-choise__all
-                    js__choise-btn" @click="choise = button.id; categoryValue(choise)"
-                    :class="{choise_active:choise === button.id}"
-                  >
-                    {{button.name}}
-                  </button>
+                <Buttons :valueId="category" @categoryValue="changeCategory"></Buttons>
                 </div>
               </div>
             </div>
             <!-----------------  SECTION MAIN CARD --------------- -->
             <main class="main-content-items main-indent">
               <div class="main-content__items js__catalog">
-                <div class="main-block" v-for="item in products"
-                  :key="item.id"
-                >
-                  <section class="main-block__item">
-                    <div class="main-card">
-                      <img :src="item.img"
-                      alt="Картинка футболки" class="main-card__img"
-                        width="330" height="330">
-                        <span class="main-card__badge" v-if="item.isNew">new</span>
-                        <span class="main-card__badge" v-else></span>
-                    </div>
-                    <div class="main-card__description">
-                      <span class="main-card__description-price">
-                      {{item.price}} баллов
-                      </span>
-                      <h3 class="main-card__description-title">
-                      {{item.title}}
-                      </h3>
-                      <span class="main-card__description-hint" v-if="item.isClothes">
-                      {{item.label}} {{item.volume}}
-                      </span>
-                      <span class="main-card__description-hint" v-else>
-                      {{item.label}} {{item.volume}}
-                      </span>
-                    </div>
-                    <div class="main-card__description-hidden"
-                      >
-                      <button class="main-card__description-btn" type="button"
-                      @click="showModal()">
-                      Заказать
-                      </button>
-                    </div>
-                  </section>
-                  </div>
+                <MainCards :data="item" :id="item.id"
+                v-for="item in products" :key="item.id"
+                @open="openCard(item)"></MainCards>
               </div>
             </main>
           </section>
@@ -165,157 +59,30 @@
     </div>
     <!-------------- SECTION MAIN END  -------------->
     <!-------------- SECTION FOOTER START  -------------->
-    <footer class="footer">
-      <div class="footer__content">
-        <div class="footer-contacts">
-          <div class="footer-contacts__copyright">© Kolesa Group</div>
-          <ul class="footer-contacts__icons">
-            <li class="footer-contacts__instagram">
-              <a
-                href="https://www.instagram.com/kolesagroup/"
-                target="_blank"
-                title="Участвуй в наших конкурсах в Instagram!"
-              >
-                <img
-                  src="./assets/icons/instagram.svg"
-                  alt="иконка Инстаграма"
-                  width="24"
-                  height="24"
-                />
-              </a>
-            </li>
-            <li class="footer-contacts__youtube">
-              <a
-                href="https://www.youtube.com/user/kolesakzvideo"
-                target="_blank"
-                title="Смотри наши видео на YouTube!"
-              >
-                <img src="./assets/icons/youtube.svg" alt="икона Ютуба" width="24" height="24" />
-              </a>
-            </li>
-            <li class="footer-contacts__vk">
-              <a href="https://vk.com/kolesakz" target="_blank" title="Присоеденяйся к нам в VK!">
-                <img src="./assets/icons/vk.svg" alt="иконка Вконтакте" width="24" height="24" />
-              </a>
-            </li>
-          </ul>
-        </div>
-        <div class="footer-ideas">
-          <p class="footer-ideas__text">
-            Есть идеи что улучшить? <br />
-            Не знаешь, с кем решить проблему?
-          </p>
-          <button type="button" class="footer-ideas__btn">Написать</button>
-        </div>
-      </div>
-    </footer>
+    <Footer></Footer>
     <!-------------- SECTION FOOTER END  -------------->
     <!-------------- SECTION MOD START  -------------->
-    <div class="modal modal-indent mod"  v-if="isShowModal">
-      <div class="modal-content modal-content-position">
-        <button class="modal-content__close" @click="closeModal()"></button>
-        <div class="modal-solution js__modal">
-          <div class="modal-solution__main">
-  <div class="modal-solution__card">
-    <div class="modal-solution__card--big">
-      <img src="../public/assets/img/shirt-main.png"
-        alt="${title}" width="330" height="330"></div>
-    <div>
-    <ul class="cards-little">
-      <li class="modal-solution__card--little js__img" data-key="imgSml-1">
-     <img src="./assets/icons/image-girl.png"
-             alt="иконка товара" width="50" height="50">
-         </li>
-        <li class="modal-solution__card--little card-active js__img"
-        data-key="imgSml-2"><img src="../public/assets/img/shirt-modal.png"
-            alt="иконка товара" width="50" height="50">
-        </li>
-       <li class="modal-solution__card--little js__img" data-key="imgSml-3">
-       <img src="./assets/icons/image-man.png"
-          alt="иконка товара" width="50" height="50">
-        </li>
-        </ul>
-        </div>
-    </div>
-    <div class="modal-main-info info-indent">
-        <section class="modal-main-info info-title">
-        <div>
-            <h2 class="modal-main-info__title">Футболка "Сдохни или умри"</h2>
-            <div class="modal-main-info__title--how-balls">1000 балов</div>
-            <input type="button" value="Попросить 50 балов"
-            class="modal-main-info__title--yellow-btn">
-        </div>
-        <div class="modal-main-info__balance">
-            <div class="modal-main-info__text">
-            <h2 class="modal-main-info__text--title">Твой баланс:</h2>
-            <h3 class="modal-main-info__text--subtitle">150 Балов</h3>
-            </div>
-        </div>
-        </section>
-      <section class="modal-main-info__colors">
-        <p class="modal-main-info__colors-text">Цвета:</p>
-        <form action="" class="modal-main-info__choise-color">
-            <div class="modal-main-info__radio">
-            <input type="radio" name="colors" id="blue"
-              value="blue" class="modal-main-info__input" checked>
-            <label for="blue" class="modal-main-info__label label-1">Синий</label>
-            </div>
-            <div class="modal-main-info__radio">
-            <input type="radio" name="colors" id="biege"
-              value="biege" class="modal-main-info__input">
-            <label for="biege" class="modal-main-info__label label-2">Бежевый</label>
-            </div>
-            <div class="modal-main-info__radio">
-            <input type="radio" name="colors" id="gray" value="gray" class="modal-main-info__input">
-            <label for="gray" class="modal-main-info__label label-3">Серый</label>
-            </div>
-          </form>
-          </section>
-          <section class="modal-main-info__size">
-            <p class="modal-main-info__size-text">Размер</p>
-            <form action="#" class="modal-main-info__form-size">
-              <div class="modal-main-info__radio-size">
-              <input type="radio" name="size" id="S" value="S"
-                class="modal-main-info__input-size active-size"
-                  checked>
-              <label for="S" class="modal-main-info__label-size">S</label>
-              </div>
-            <div class="modal-main-info__radio-size">
-              <input type="radio" name="size" id="M" value="M" class="modal-main-info__input-size">
-              <label for="M" class="modal-main-info__label-size">M</label>
-              </div>
-              <div class="modal-main-info__radio-size">
-              <input type="radio" name="size" id="L" value="L" class="modal-main-info__input-size">
-              <label for="L" class="modal-main-info__label-size">L</label>
-              </div>
-            </form>
-            </section>
-            <section class="modal-main-info__descr">
-              <p class="modal-main-info__descr-bold">
-                  Детали:
-              </p>
-              <p class="modal-main-info__descr-regular">
-              Брендированная толстовка от Qazaq Republic. Материал: Хлопок 80%, Вискоза 20%
-              </p>
-              <p class="modal-main-info__descr-bold"> Как выбрать размер:</p>
-              <p class="modal-main-info__descr-regular">Написать дяде Рику для уточнения.</p>
-            </section>
-          </div>
-        </div>
-      </div>
-    </div>
+    <modal :isOpen="isShowModal" @close="closeModal" :data="modalData"></modal>
     <!-------------- SECTION MOD END  -------------->
-  </div>
-  </div>
+    </div>
 </template>
 
 <script>
+import Modal from '@/components/Modal.vue';
+import Nav from '@/components/Nav.vue';
+import Footer from '@/components/Footer.vue';
+import Search from '@/components/Search.vue';
+import Profile from '@/components/Profile.vue';
+import Balls from '@/components/Balls.vue';
+import MainCards from '@/components/MainCards.vue';
+import Buttons from '@/components/Buttons.vue';
+import axios from '@/axios';
+
 export default {
   name: 'App',
   data() {
     return {
       isShowModal: false,
-      choise: 0,
       cards: {
         clothes: [
           {
@@ -577,25 +344,39 @@ export default {
             isClothes: false,
           },
         ],
+        user: [
+        ],
       },
-      category: String,
-      buttons: [
-        {
-          name: 'Все товары',
-          id: 0,
-        },
-        {
-          name: 'Одежда',
-          id: 1,
-        },
-        {
-          name: 'Аксессуары',
-          id: 2,
-        },
-      ],
+      cardsData: {},
+      modalData: {},
+      category: Number,
     };
   },
   components: {
+    Modal,
+    Nav,
+    Footer,
+    Search,
+    Profile,
+    Balls,
+    MainCards,
+    Buttons,
+  },
+  mounted() {
+    axios.get('templates/-_RLsEGjof6i/data')
+      .then((response) => {
+        this.cards.clothes = response.data;
+        console.log(this.cards.clothes);
+      });
+    axios.get('templates/q3OPxRyEcPvP/data')
+      .then((response) => {
+        this.cards.accessories = response.data;
+        console.log(this.cards.accessories);
+      });
+    axios.get('templates/7ZW3y5GAuIge/data')
+      .then((response) => {
+        this.cards.user = response.data;
+      });
   },
   computed: {
     products() {
@@ -608,17 +389,23 @@ export default {
     },
   },
   methods: {
-    categoryValue(id) {
-      this.category = id;
-      return this.category;
+    cardsProps() {
+      this.cardsData = this.products;
     },
     allProducts() {
       const productsAll = this.cards.accessories.concat(this.cards.clothes);
       productsAll.sort(this.sortByNew);
       return productsAll;
     },
+    changeCategory(data) {
+      this.category = data;
+    },
     showModal() {
       this.isShowModal = true;
+    },
+    openCard(data) {
+      this.showModal();
+      this.modalData = data;
     },
     closeModal() {
       this.isShowModal = false;
