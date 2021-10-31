@@ -44,9 +44,9 @@
         <p class="modal-main-info__colors-text">Цвета:</p>
         <form action="" class="modal-main-info__choise-color">
             <div class="modal-main-info__radio" v-for="color in data.colors" :key="color.id">
-            <input type="radio" name="colors" :id="color.label"
-              :value="color.label" class="modal-main-info__input" checked>
-            <label :for="color.label" class="modal-main-info__label label-1">{{color.label}}</label>
+            <label class="modal-main-info__label label-1">
+            <input type="radio"
+              :value="color.label" class="modal-main-info__input" checked>{{color.label}}</label>
             </div>
           </form>
           </section>

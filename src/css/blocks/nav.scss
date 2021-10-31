@@ -21,22 +21,6 @@
     list-style-type: none;
     white-space: nowrap;
 
-    &__item {
-        margin-bottom: 25px;
-        position: relative;
-
-        &--active::before {
-            content: url(/src/assets/icons/Rectangle.png);
-            position: absolute;
-            top: -5px;
-            left: -10px;
-        }
-
-        &--active .content-nav-menu__link {
-            font-weight: 600;
-        }
-    }
-
     &__link {
         text-decoration: none;
 
@@ -50,5 +34,21 @@
 
     &__span {
         font-weight: 600;
+    }
+
+    &__item {
+        margin-bottom: 25px;
+        position: relative;
+
+        &--active::before {
+            content: url(../src/assets/icons/Rectangle.png);
+            position: absolute;
+            top: -5px;
+            left: -10px;
+        }
+
+        &--active {
+            font-weight: 600;
+        }
     }
 }
