@@ -18,6 +18,7 @@ import axios from '@/axios';
 export default {
   name: 'Profile',
   props: {
+    profile: Object,
   },
   data() {
     return {
@@ -29,12 +30,24 @@ export default {
     updateProfile() {
       this.$emit('update', this.user);
     },
+    updateUserApp() {
+      this.user = this.profile;
+    },
   },
   mounted() {
     axios.get('templates/7ZW3y5GAuIge/data')
       .then((response) => {
         this.user = response.data;
+        console.log(this.user);
       });
+  },
+  computed: {
+    updateUser() {
+      if (this.profile !== this.user) {
+        this.updateUserApp();
+      }
+      return this.user;
+    },
   },
 };
 </script>

@@ -17,7 +17,7 @@
             <Search></Search>
           </li>
           <li class="header-items-profile">
-            <Profile @update="profileUpdate(data)"></Profile>
+            <Profile @update="profileUpdate(data)" :profile="cards.user"></Profile>
           </li>
         </ul>
       </header>
@@ -52,7 +52,6 @@
               <div class="main-content__items js__catalog">
                 <MainCard
                 :data="item"
-                :id="item.id"
                 v-for="item in products"
                 :key="item.id"
                 @open="openCard(item)"
@@ -72,6 +71,7 @@
         :isOpen="isShowModal"
         @close="closeModal"
         :data="modalData"
+        :profileData="cards.user"
         ></modal>
     <!-------------- SECTION MOD END  -------------->
     </div>
@@ -129,6 +129,7 @@ export default {
       } if (this.category === 2) {
         return this.cards.accessories;
       }
+      console.log(this.cards.user);
       return this.allProducts();
     },
   },
