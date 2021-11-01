@@ -113,6 +113,9 @@ export default {
       console.log(this.profileData);
       this.$emit('close');
     },
+    order() {
+      this.$emit('order', this.profileData.cost);
+    },
   },
 };
 </script>

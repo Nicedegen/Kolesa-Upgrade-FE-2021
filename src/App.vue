@@ -72,6 +72,7 @@
         @close="closeModal"
         :data="modalData"
         :profileData="cards.user"
+        @order="setScore(cost)"
         ></modal>
     <!-------------- SECTION MOD END  -------------->
     </div>
@@ -154,6 +155,10 @@ export default {
     },
     profileUpdate(data) {
       this.cards.user = data;
+    },
+    setScore(score) {
+      this.isShowModal = false;
+      console.log(score);
     },
     sortByNew(a, b) {
       if (a.isNew > b.isNew) {
