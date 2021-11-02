@@ -18,7 +18,7 @@ import axios from '@/axios';
 export default {
   name: 'Profile',
   props: {
-    // profile: Object,
+    profile: Object,
   },
   data() {
     return {

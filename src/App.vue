@@ -17,7 +17,9 @@
             <Search></Search>
           </li>
           <li class="header-items-profile">
-            <Profile @update="profileUpdate()" :profile="cards.user"></Profile>
+            <Profile
+            @update="updateUser"
+            ></Profile>
           </li>
         </ul>
       </header>
@@ -28,37 +30,12 @@
         <Nav></Nav>
           <!-------------- SECTION NAV END  -------------->
           <!-------------- SECTION MAIN START  -------------->
-          <section class="main">
-            <div class="main-inner">
-              <div class="main-content">
-                <div class="main-banner">
-                  <img
-                    src="../public/assets/img/banner.png"
-                    alt="Главный банер акций"
-                    width="100%"
-                    height="340"
-                  />
-                </div>
-                <Balls></Balls>
-                <div class="main-content-choise">
-                <Buttons
-                @categoryValue="changeCategory"
-                ></Buttons>
-                </div>
-              </div>
-            </div>
-            <!-----------------  SECTION MAIN CARD --------------- -->
-            <main class="main-content-items main-indent">
-              <div class="main-content__items js__catalog">
-                <MainCard
-                :data="item"
-                v-for="item in products"
-                :key="item.id"
-                @open="openCard(item)"
-                ></MainCard>
-              </div>
-            </main>
-          </section>
+          <router-view
+            :search="search"
+            :user-data="userData"
+            @setSearch="setSearch"
+            @updateUser="updateUser"
+          ></router-view>
         </div>
       </section>
     </div>
@@ -66,105 +43,45 @@
     <!-------------- SECTION FOOTER START  -------------->
         <Footer></Footer>
     <!-------------- SECTION FOOTER END  -------------->
-    <!-------------- SECTION MOD START  -------------->
-        <modal
-        :isOpen="isShowModal"
-        @close="closeModal"
-        :data="modalData"
-        :profileData="cards.user"
-        ></modal>
-    <!-------------- SECTION MOD END  -------------->
     </div>
 </template>
 
 <script>
-import Modal from '@/components/Modal.vue';
-import Nav from '@/components/Nav.vue';
-import Footer from '@/components/Footer.vue';
-import Search from '@/components/Search.vue';
-import Profile from '@/components/Profile.vue';
-import Balls from '@/components/Balls.vue';
-import MainCard from '@/components/MainCard.vue';
-import Buttons from '@/components/Buttons.vue';
-import axios from '@/axios';
+import Nav from '@/layouts/components/Nav.vue';
+import Footer from '@/layouts/components/Footer.vue';
+import Search from '@/layouts/components/Search.vue';
+import Profile from '@/layouts/components/Profile.vue';
 
 export default {
   name: 'App',
   data() {
     return {
-      isShowModal: false,
-      cards: {
-        clothes: [],
-        accessories: [],
-        user: Object,
+      search: '',
+      userData: {
+        score: 0,
+        name: '',
+        avatarUrl: '',
       },
       modalData: {},
-      category: Number,
     };
   },
   components: {
-    Modal,
     Nav,
     Footer,
     Search,
     Profile,
-    Balls,
-    MainCard,
-    Buttons,
   },
   mounted() {
-    axios.get('templates/-_RLsEGjof6i/data')
-      .then((response) => {
-        this.cards.clothes = response.data;
-      });
-    axios.get('templates/q3OPxRyEcPvP/data')
-      .then((response) => {
-        this.cards.accessories = response.data;
-      });
   },
   computed: {
-    products() {
-      if (this.category === 1) {
-        return this.cards.clothes;
-      } if (this.category === 2) {
-        return this.cards.accessories;
-      }
-      console.log(this.cards.user);
-      return this.allProducts();
-    },
   },
   methods: {
-    allProducts() {
-      const productsAll = this.cards.accessories.concat(this.cards.clothes);
-      productsAll.sort(this.sortByNew);
-      return productsAll;
+    updateUser(data) {
+      this.userData = data;
+      console.log(this.userData);
     },
-    changeCategory(data) {
-      this.category = data;
-    },
-    showModal() {
-      this.isShowModal = true;
-    },
-    openCard(data) {
-      this.modalData = data;
-      this.showModal();
-    },
-    closeModal() {
-      this.isShowModal = false;
-    },
-    profileUpdate(data) {
-      this.cards.user = data;
-      console.log(this.cards.user);
-      this.closeModal();
-    },
-    sortByNew(a, b) {
-      if (a.isNew > b.isNew) {
-        return -1;
-      }
-      if (a.isNew < b.isNew) {
-        return 1;
-      }
-      return 0;
+    setSearch(e) {
+      this.search = e.target.value;
     },
   },
 };
