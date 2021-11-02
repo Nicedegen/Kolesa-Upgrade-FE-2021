@@ -34,7 +34,7 @@
 
 <script>
 export default {
-  name: 'MainCards',
+  name: 'MainCard',
   props: {
     data: Object,
   },

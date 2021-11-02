@@ -15,7 +15,6 @@
 export default {
   name: 'Buttons',
   props: {
-    valueId: Number,
   },
   data() {
     return {
@@ -38,8 +37,7 @@ export default {
   },
   methods: {
     categoryValue(id) {
-      this.valueId = id;
-      this.$emit('categoryValue', this.valueId);
+      this.$emit('categoryValue', id);
     },
   },
 };
