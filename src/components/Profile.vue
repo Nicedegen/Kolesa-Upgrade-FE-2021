@@ -18,7 +18,7 @@ import axios from '@/axios';
 export default {
   name: 'Profile',
   props: {
-    profile: Object,
+    // profile: Object,
   },
   data() {
     return {
@@ -29,10 +29,11 @@ export default {
   methods: {
     updateProfile() {
       this.$emit('update', this.user);
+      console.log(this.user);
     },
-    updateUserApp() {
-      this.user = this.profile;
-    },
+    // updateUserApp() {
+    //   this.user = this.profile;
+    // },
   },
   mounted() {
     axios.get('templates/7ZW3y5GAuIge/data')
@@ -41,13 +42,13 @@ export default {
         console.log(this.user);
       });
   },
-  computed: {
-    updateUser() {
-      if (this.profile !== this.user) {
-        this.updateUserApp();
-      }
-      return this.user;
-    },
-  },
+  // computed: {
+  //   updateUser() {
+  //     if (this.profile !== this.user) {
+  //       this.updateUserApp();
+  //     }
+  //     return this.user;
+  //   },
+  // },
 };
 </script>

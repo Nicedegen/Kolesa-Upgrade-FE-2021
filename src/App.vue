@@ -17,7 +17,7 @@
             <Search></Search>
           </li>
           <li class="header-items-profile">
-            <Profile @update="profileUpdate(data)" :profile="cards.user"></Profile>
+            <Profile @update="profileUpdate()" :profile="cards.user"></Profile>
           </li>
         </ul>
       </header>
@@ -72,7 +72,6 @@
         @close="closeModal"
         :data="modalData"
         :profileData="cards.user"
-        @order="setScore(cost)"
         ></modal>
     <!-------------- SECTION MOD END  -------------->
     </div>
@@ -97,7 +96,7 @@ export default {
       cards: {
         clothes: [],
         accessories: [],
-        user: {},
+        user: Object,
       },
       modalData: {},
       category: Number,
@@ -155,10 +154,8 @@ export default {
     },
     profileUpdate(data) {
       this.cards.user = data;
-    },
-    setScore(score) {
-      this.isShowModal = false;
-      console.log(score);
+      console.log(this.cards.user);
+      this.closeModal();
     },
     sortByNew(a, b) {
       if (a.isNew > b.isNew) {

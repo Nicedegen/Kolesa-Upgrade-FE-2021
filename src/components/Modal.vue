@@ -38,7 +38,7 @@
                                         Твой баланс:
                                     </h2>
                                     <h3 class="modal-main-info__text--subtitle">
-                                        {{ profileData.cost }} Балов
+                                         Балов
                                     </h3>
                                 </div>
                             </div>
@@ -102,7 +102,7 @@ export default {
   props: {
     isOpen: Boolean,
     data: Object,
-    profileData: Object,
+    // profileData: Object,
   },
   data() {
     return {
@@ -110,11 +110,8 @@ export default {
   },
   methods: {
     closeModal() {
-      console.log(this.profileData);
       this.$emit('close');
-    },
-    order() {
-      this.$emit('order', this.profileData.cost);
+      console.log(this.profileData);
     },
   },
 };
