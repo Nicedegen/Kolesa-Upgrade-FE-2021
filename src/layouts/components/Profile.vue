@@ -1,54 +1,40 @@
 <template>
   <button type="button" class="header-items-profile__btn">
-      <img :src="user.avatarUrl"
+      <img
+        :src="userInfo.avatarUrl"
         alt="Иконка профиля"
         class="header-items-profile__icon"
         width="44" height="44">
       <span class="header-items-profile__text">
-          <span class="header-items-profile__text--name">{{user.name}}</span>
+          <span class="header-items-profile__text--name">
+          {{ userInfo.name }}
+          </span>
           <br>
-          <span class="header-items-profile__text--balls">{{user.score}}</span>
+          <span class="header-items-profile__text--balls">
+          {{ userInfo.score }}
+          </span>
       </span>
   </button>
 </template>
 
 <script>
-import axios from '@/axios';
+
+import { mapState } from 'vuex';
 
 export default {
   name: 'Profile',
-  props: {
-    profile: Object,
-  },
-  data() {
-    return {
-      user: {
-      },
-    };
-  },
   methods: {
-    updateProfile() {
-      this.$emit('update', this.user);
-      console.log(this.user);
+    fetchUser() {
+      this.$store.dispatch('fetchUserInfo');
     },
-    // updateUserApp() {
-    //   this.user = this.profile;
-    // },
   },
   mounted() {
-    axios.get('templates/7ZW3y5GAuIge/data')
-      .then((response) => {
-        this.user = response.data;
-        console.log(this.user);
-      });
+    this.fetchUser();
   },
-  // computed: {
-  //   updateUser() {
-  //     if (this.profile !== this.user) {
-  //       this.updateUserApp();
-  //     }
-  //     return this.user;
-  //   },
-  // },
+  computed: {
+    ...mapState({
+      userInfo: 'userInfo',
+    }),
+  },
 };
 </script>

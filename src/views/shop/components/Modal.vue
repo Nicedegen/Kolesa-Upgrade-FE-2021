@@ -30,7 +30,9 @@
                                     {{data.price}} балов
                                 </div>
                                 <input type="button" value="Попросить 50 балов"
-                                  class="modal-main-info__title--yellow-btn">
+                                  class="modal-main-info__title--yellow-btn"
+                                  @click="order"
+                                  >
                             </div>
                             <div class="modal-main-info__balance">
                                 <div class="modal-main-info__text">
@@ -106,12 +108,22 @@ export default {
   },
   data() {
     return {
+      title: '',
+      colors: [{ label: 'some color', color: '#00000' }],
     };
   },
   methods: {
     closeModal() {
       this.$emit('close');
       console.log(this.profileData);
+    },
+    order() {
+      const { score } = this.$store.state.userInfo;
+      if (score - this.data.price <= 0) {
+        alert('Недостаточно балов');
+        return;
+      }
+      this.$store.commit('setNewScore', this.data.price);
     },
   },
 };

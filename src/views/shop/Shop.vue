@@ -90,7 +90,6 @@ export default {
       } if (this.category === 2) {
         return this.cards.accessories;
       }
-      console.log(this.cards.user);
       return this.allProducts();
     },
   },
@@ -115,7 +114,6 @@ export default {
     },
     profileUpdate(data) {
       this.cards.user = data;
-      console.log(this.cards.user);
       this.closeModal();
     },
     sortByNew(a, b) {
