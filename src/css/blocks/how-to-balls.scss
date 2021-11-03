@@ -1,0 +1,76 @@
+.how-direction {
+  &__link-shop,
+  &__link-how {
+    text-decoration: none;
+    @include text-style-regular($color: $not-active-text-color);
+
+    &:visited {
+      color: $not-active-text-color;
+    }
+  }
+  &__title {
+    margin-top: 24px;
+    @include text-style-bold($height: 32px, $size: 20px);
+  }
+}
+
+.how-main {
+  &__inner {
+    margin-top: 16px;
+    max-width: 1038px;
+    max-height: 1020px;
+    display: grid;
+    grid-template-columns: 330px 330px 330px;
+    gap: 24px;
+
+  }
+}
+
+.how-main-card {
+  width: 332px;
+  height: 324px;
+  @include border-radius;
+  position: relative;
+  box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+
+  &__inner {
+    margin: 24px 0 0 24px;
+    width: 282px;
+    min-height: 108px;
+  }
+
+  &__title {
+    @include text-style-bold($size: 16px);
+    margin-top: 8px;
+  }
+  &__balls {
+    @include text-style-regular($size: 13px);
+    margin-top: 8px;
+
+    span {
+      max-width: 172px;
+      background-color: $button-payed-blue; 
+      padding: 5px;
+      text-align: center;
+      border-radius: 4px;
+    }
+  }
+  &__subtitle {
+    @include text-style-regular;
+    margin-top: 8px;
+  }
+  &__button {
+    position: absolute;
+    bottom: 32px;
+    left: 24px;
+
+    &-inner {
+      width: 282px;
+      height: 44px;
+      background-color: $not-active-text-color;
+      @include text-style-regular($size: 16px, $color: $white-color);
+      @include border-radius($radius: 8px);
+      border: none;
+    }
+  }
+}

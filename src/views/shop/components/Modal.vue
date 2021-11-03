@@ -29,10 +29,18 @@
                                 <div class="modal-main-info__title--how-balls">
                                     {{data.price}} балов
                                 </div>
-                                <input type="button" value="Попросить 50 балов"
-                                  class="modal-main-info__title--yellow-btn"
-                                  @click="order"
-                                  >
+                                <div>
+                                  <input v-if="isScore"
+                                  type="button"
+                                  value="Заказать"
+                                    class="modal-main-info__title--blue-btn"
+                                    @click="order">
+                                  <input v-else
+                                  type="button"
+                                  :value="showResult()"
+                                    class="modal-main-info__title--yellow-btn"
+                                    @click="order">
+                                </div>
                             </div>
                             <div class="modal-main-info__balance">
                                 <div class="modal-main-info__text">
@@ -40,27 +48,28 @@
                                         Твой баланс:
                                     </h2>
                                     <h3 class="modal-main-info__text--subtitle">
-                                         Балов
+                                      {{ $store.state.userInfo.score }}   Балов
                                     </h3>
                                 </div>
                             </div>
                         </section>
-                        <section class="modal-main-info__colors">
+                        <section class="modal-main-info__colors" v-if="isColor">
                           <p class="modal-main-info__colors-text">Цвета:</p>
                           <form action="" class="modal-main-info__choise-color">
                               <div class="modal-main-info__radio"
                               v-for="color in data.colors"
                               :key="color.id">
-                                  <label class="modal-main-info__label label-1">
+                                  <label class='modal-main-info__label label-1'>
                                       <input type="radio"
                                         :value="color.label"
-                                        class="modal-main-info__input" checked>
+                                        class="modal-main-info__input">
                                         {{color.label}}
                                       </label>
                               </div>
                           </form>
                         </section>
-                        <section class="modal-main-info__size">
+                        <section v-else></section>
+                        <section class="modal-main-info__size" v-if="isSize">
                             <p class="modal-main-info__size-text">Размер</p>
                             <form action="#" class="modal-main-info__form-size">
                                 <div class="modal-main-info__radio-size"
@@ -70,13 +79,14 @@
                                     :id="size"
                                     :value="size"
                                     class="modal-main-info__input-size active-size"
-                                    checked>
+                                    >
                                     <label :for="size" class="modal-main-info__label-size">
                                     {{size}}
                                     </label>
                                 </div>
                             </form>
                         </section>
+                        <section v-else></section>
                         <section class="modal-main-info__descr">
                             <p class="modal-main-info__descr-bold">
                                 Детали:
@@ -104,26 +114,65 @@ export default {
   props: {
     isOpen: Boolean,
     data: Object,
-    // profileData: Object,
   },
   data() {
     return {
       title: '',
-      colors: [{ label: 'some color', color: '#00000' }],
+      colors: Array,
+      isScore: true,
+      result: Number,
+      isColor: Boolean,
+      isSize: Boolean,
     };
+  },
+  computed: {
+    colorCheck() {
+      if (this.data.colors && this.data.colors.length) {
+        return this.colorTrue();
+      }
+      return this.colorFalse();
+    },
+    sizeCheck() {
+      if (this.data.sizes && this.data.sizes.length) {
+        return this.sizeTrue();
+      }
+      return this.sizeFalse();
+    },
   },
   methods: {
     closeModal() {
       this.$emit('close');
-      console.log(this.profileData);
     },
     order() {
       const { score } = this.$store.state.userInfo;
       if (score - this.data.price <= 0) {
-        alert('Недостаточно балов');
+        this.isScore = false;
+        this.result = score - this.data.price;
         return;
       }
       this.$store.commit('setNewScore', this.data.price);
+    },
+    showResult() {
+      return `Попросить ${-this.result} балла`;
+    },
+    colorClick() {
+      console.log(this.data.colors);
+    },
+    colorTrue() {
+      this.isColor = true;
+      return this.isColor;
+    },
+    colorFalse() {
+      this.isColor = false;
+      return this.isColor;
+    },
+    sizeTrue() {
+      this.isSize = true;
+      return this.isSize;
+    },
+    sizeFalse() {
+      this.isSize = false;
+      return this.isSize;
     },
   },
 };

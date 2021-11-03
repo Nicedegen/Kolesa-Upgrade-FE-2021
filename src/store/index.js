@@ -6,20 +6,28 @@ Vue.use(Vuex);
 
 export default new Vuex.Store({
   state: {
-    userName: 'Pasha',
     userInfo: {
       name: '',
       score: 0,
       avatarUrl: '',
     },
+    cards: {
+      clothes: [],
+      accessories: [],
+    },
   },
   mutations: {
     updateUserInfo(state, responce) {
       state.userInfo = responce.data;
-      console.log(this.state.userInfo);
     },
     setNewScore(state, newScore) {
       state.userInfo.score -= newScore;
+    },
+    updateCardsClothes(state, responce) {
+      state.cards.clothes = responce.data;
+    },
+    updateCardsAccessories(state, responce) {
+      state.cards.accessories = responce.data;
     },
   },
   actions: {
@@ -28,6 +36,18 @@ export default new Vuex.Store({
         .then((data) => {
           if (data && Object.keys(data).length) {
             commit('updateUserInfo', data);
+          }
+        });
+      axios.get('templates/-_RLsEGjof6i/data')
+        .then((data) => {
+          if (data && Object.keys(data).length) {
+            commit('updateCardsClothes', data);
+          }
+        });
+      axios.get('templates/q3OPxRyEcPvP/data')
+        .then((data) => {
+          if (data && Object.keys(data).length) {
+            commit('updateCardsAccessories', data);
           }
         });
     },

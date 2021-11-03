@@ -47,7 +47,6 @@ import MainCard from './components/MainCard.vue';
 import Modal from './components/Modal.vue';
 import Balls from './components/Balls.vue';
 import Buttons from './components/Buttons.vue';
-import axios from '@/axios';
 
 export default {
   name: 'Shop',
@@ -64,7 +63,7 @@ export default {
         user: Object,
       },
       modalData: {},
-      category: Number,
+      category: 0,
     };
   },
   components: {
@@ -74,30 +73,30 @@ export default {
     MainCard,
   },
   mounted() {
-    axios.get('templates/-_RLsEGjof6i/data')
-      .then((response) => {
-        this.cards.clothes = response.data;
-      });
-    axios.get('templates/q3OPxRyEcPvP/data')
-      .then((response) => {
-        this.cards.accessories = response.data;
-      });
   },
   computed: {
     products() {
       if (this.category === 1) {
-        return this.cards.clothes;
+        return this.addClothes();
       } if (this.category === 2) {
-        return this.cards.accessories;
+        return this.addAccess();
       }
       return this.allProducts();
     },
   },
   methods: {
+    addClothes() {
+      this.cards.clothes = this.$store.state.cards.clothes;
+      return this.cards.clothes.sort(this.sortByNew);
+    },
+    addAccess() {
+      this.cards.accessories = this.$store.state.cards.accessories;
+      return this.cards.accessories.sort(this.sortByNew);
+    },
     allProducts() {
-      const productsAll = this.cards.accessories.concat(this.cards.clothes);
-      productsAll.sort(this.sortByNew);
-      return productsAll;
+      const prodAll = this.$store.state.cards.accessories.concat(this.$store.state.cards.clothes);
+      prodAll.sort(this.sortByNew);
+      return prodAll;
     },
     changeCategory(data) {
       this.category = data;

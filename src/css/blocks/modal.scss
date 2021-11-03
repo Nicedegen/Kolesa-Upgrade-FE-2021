@@ -134,6 +134,18 @@
             border: none;
             margin-bottom: 24px;
         }
+
+        &--blue-btn {
+            @include text-style-regular($color: $white-color);
+            @include border-radius(8px);
+
+            width: 132px;
+            height: 36px;
+            background-color: $not-active-text-color;
+            cursor: pointer;
+            border: none;
+            margin-bottom: 24px;
+        }
     }
 
     &__balance {

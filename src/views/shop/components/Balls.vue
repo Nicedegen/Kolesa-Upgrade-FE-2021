@@ -4,7 +4,7 @@
     v-for='button in buttons'
     :key="button.id"
     :class="[button.class, button.classMod]"
-    @click.prevent="goToPage"
+    @click.prevent="goToPage(button.id)"
     >
       <span :class="button.iconClass"></span>
       <span class="main-balls__text">{{ button.text }}</span>
@@ -43,8 +43,10 @@ export default {
     };
   },
   methods: {
-    goToPage() {
-      this.$router.push({ name: 'Score' });
+    goToPage(data) {
+      if (data === 1) {
+        this.$router.push({ name: 'Score' });
+      }
     },
   },
 };
