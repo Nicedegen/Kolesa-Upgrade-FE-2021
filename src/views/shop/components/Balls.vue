@@ -3,7 +3,9 @@
     <button type="button"
     v-for='button in buttons'
     :key="button.id"
-    :class="[button.class, button.classMod]">
+    :class="[button.class, button.classMod]"
+    @click.prevent="goToPage(button.id)"
+    >
       <span :class="button.iconClass"></span>
       <span class="main-balls__text">{{ button.text }}</span>
     </button>
@@ -41,6 +43,11 @@ export default {
     };
   },
   methods: {
+    goToPage(data) {
+      if (data === 1) {
+        this.$router.push({ name: 'Score' });
+      }
+    },
   },
 };
 </script>
